@@ -1,6 +1,4 @@
-
-![Logo-transparent](https://user-images.githubusercontent.com/60704795/114964523-bdc85980-9e23-11eb-9150-807d82a81ead.png)
-
+![Logo-transparent](https://user-images.githubusercontent.com/60704795/114964605-ebad9e00-9e23-11eb-94e8-52915382ed84.png)
 
 # **Team 27: The Bean-Bag Boys**
 
