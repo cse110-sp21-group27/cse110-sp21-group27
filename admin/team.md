@@ -4,6 +4,15 @@
 
 Welcome to the official page of The Bean-Bag Boys! This quarter we'll be tackling the creation of an online bullet journal. Our engines? **Revved**. Our creative juices? **Flowing**. Our logic behind the team name? **Don't worry about it**.
 
+## Our Values
+Here at The Bean-Bag Boys, we value **HURT** over all else:
+#### Humility
+#### Understanding
+#### Respect
+#### Trust
+
+A true Bean-Bag Boy treats his fellow developer with dignity and compassion, working diligently to ensure that a mutual respect is established and a satisfactory end product is procured without any broken laptop screens or furious emails addressed to Chancellor Khosla.
+
 
 ## Our Goals
 - [ ] Implement the software development process
