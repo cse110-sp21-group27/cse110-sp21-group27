@@ -55,7 +55,7 @@ Github: https://github.com/Isnavarr
 ### Richie Porras - Developer
 ![richie_porras_picture](https://user-images.githubusercontent.com/60704795/114963073-c79c8d80-9e20-11eb-9b98-412a6e20a737.jpg)
 
-Richie Porras is a 22 year old Fall 2020 Computer Science transfer from a local community college. He loves to work on a team and has illustrated this with his involvement in sports such as baseball and soccer. He has played in small teams in his local area and in Mexico. He enjoys playing Overwatch and Warzone on PC and has been involved in eSports before focusing more on his academic career.
+I am a 22 year old Fall 2020 Computer Science transfer from a local community college. I like to work on a team. I have been involved in sports such as baseball and soccer. I played in small teams in my local area and in Mexico. I also enjoy playing Overwatch and Warzone on PC and have been involved in eSports before focusing more on my academic career. 
 
 Github: https://github.com/aSlothMachine
 
