@@ -34,6 +34,7 @@ Github: https://github.com/samyak-karnavat
 
 My name is Alan Tram, I am a third year Cognitive Science HCI Major. I spend my time mostly with the design lab, but if I got the day off then I'll be watching sports. I'm an avid home cook and hope to get back into photography this coming summer. I'm aiming to be a Full Stack Developer!
 
+Github: https://github.com/atramUCSD
 
 ### Raymond Wang - Planner
 ![RaymondWang_resize2](https://user-images.githubusercontent.com/60704795/114962603-d8003880-9e1f-11eb-8914-fbc972978d2f.jpg)
