@@ -1,5 +1,5 @@
 # Team 27: Bean-Bag Boys
-[Team Page](https://github.com/gd95148/cse110-sp21-group27/blob/f123a8140fce8899b2bd9deb738ca2d486b6086c/admin/team.md)
+[Team Page](https://github.com/cse110-sp21-group27/cse110-sp21-group27/blob/22d0b6f6f2028bafbe21772ee5a600ca9b0222a7/admin/team.md)
 ## The Bullet Journal
 
 To be planned on, iterated, and implemented...

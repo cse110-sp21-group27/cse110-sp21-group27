@@ -2,7 +2,7 @@
 
 # **Team 27: The Bean-Bag Boys**
 
-Welcome to the official site of The Bean-Bag Boys! This quarter we'll be tackling the creation of an online bullet journal. Our engines? **Revved**. Our creative juices? **Flowing**. Our logic behind the team name? **Don't worry about it**.
+Welcome to the official page of The Bean-Bag Boys! This quarter we'll be tackling the creation of an online bullet journal. Our engines? **Revved**. Our creative juices? **Flowing**. Our logic behind the team name? **Don't worry about it**.
 
 
 ## Our Goals
@@ -34,6 +34,7 @@ Github: https://github.com/samyak-karnavat
 
 My name is Alan Tram, I am a third year Cognitive Science HCI Major. I spend my time mostly with the design lab, but if I got the day off then I'll be watching sports. I'm an avid home cook and hope to get back into photography this coming summer. I'm aiming to be a Full Stack Developer!
 
+Github: https://github.com/atramUCSD
 
 ### Raymond Wang - Planner
 ![RaymondWang_resize2](https://user-images.githubusercontent.com/60704795/114962603-d8003880-9e1f-11eb-8914-fbc972978d2f.jpg)
