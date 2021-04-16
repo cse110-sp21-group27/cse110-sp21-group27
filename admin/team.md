@@ -2,7 +2,7 @@
 
 # **Team 27: The Bean-Bag Boys**
 
-Welcome to the official site of The Bean-Bag Boys! This quarter we'll be tackling the creation of an online bullet journal. Our engines? **Revved**. Our creative juices? **Flowing**. Our logic behind the team name? **Don't worry about it**.
+Welcome to the official page of The Bean-Bag Boys! This quarter we'll be tackling the creation of an online bullet journal. Our engines? **Revved**. Our creative juices? **Flowing**. Our logic behind the team name? **Don't worry about it**.
 
 
 ## Our Goals
