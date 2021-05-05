@@ -1,3 +1,12 @@
+## Professor Office Hours
+### Monday, May 3 2021
+
+###Members Present:
+- Samyak Karnavat
+- Issac Navarro
+- Xun Zhu
+- Richie Porras
+
 ### Other team feedbacks:
 - Big rabbit hole: decorating a lot
 - Process and Planning: Dividing tasks, specifying what the tasks are
