@@ -1,12 +1,21 @@
-## Professor Office Hours
-### Monday, May 3 2021
-
-###Members Present:
-- Samyak Karnavat
-- Issac Navarro
-- Xun Zhu
-- Richie Porras
-
+ # **Team 27: Bean-Bag Boys**
+### *Type of meeting held:*
+```
+Professor Office Hours Week 6
+```
+### *Date, time & location & writer:*
+**Date:** `2021-05-3`
+**Start Time:** `2:00 PM`
+**End Time:** `4:00 PM`
+**Platform:** `Zoom`
+**Author:** `Samyak Karnavat`
+​
+### *Members present:*
+Samyak Karnavat
+Issac Navarro
+Richie Porras
+Xun Zhu
+​
 ### Other team feedbacks:
 - Big rabbit hole: decorating a lot
 - Process and Planning: Dividing tasks, specifying what the tasks are
