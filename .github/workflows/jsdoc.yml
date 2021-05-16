@@ -1,4 +1,4 @@
-# Adopted some of commit files from https://github.com/marketplace/actions/generate-documentation
+# Adopted some of the commit file template from https://github.com/marketplace/actions/generate-documentation
 
 name: jsdoc
 
