@@ -1,0 +1,25 @@
+name: Linting
+
+on:
+  pull_request:
+    branches: main
+  
+  jobs:
+    eslint:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+          
+        - name: Install Eslint
+          working-directory: !!TBA!!
+          run: npm install eslint --save-dev
+          
+       - name: Set up config
+         working-directory: !!TBA!!
+         run: npx eslint --init
+         
+       - name: Run ESLint
+         working-directory: !!TBA!!
+         run: npx eslint "./*.js"
+        
