@@ -1,4 +1,4 @@
-# Adopted some of the commit file template from https://github.com/marketplace/actions/generate-documentation
+
 
 name: jsdoc
 
@@ -26,8 +26,9 @@ jobs:
         
       - name: run JSDoc
         working-directory: ./source
-        run: jsdoc ![Sum .js]! -d ../docs
-                
+        run: jsdoc documentation.js -d ../docs
+        
+      # Adopted some of the commit file template from https://github.com/marketplace/actions/generate-documentation
       - name: Commit files
         run: |
           git add .
