@@ -4,21 +4,21 @@ on:
   pull_request:
     branches: main
   
-  jobs:
+jobs:
     eslint:
       runs-on: ubuntu-latest
       steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Install Eslint
+        working-directory: ./source
+        run: npm install eslint --save-dev
           
-        - name: Install Eslint
-          working-directory: !!TBA!!
-          run: npm install eslint --save-dev
-          
-       - name: Set up config
-         working-directory: !!TBA!!
-         run: npx eslint --init
+      - name: Set up config
+        working-directory: ./source
+        run: npx eslint --init
          
-       - name: Run ESLint
-         working-directory: !!TBA!!
-         run: npx eslint "./*.js"
+      - name: Run ESLint
+        working-directory: ./source
+        run: npx eslint "./*.js"
