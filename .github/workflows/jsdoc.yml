@@ -1,1 +1,40 @@
+# Adopted some of commit files from https://github.com/marketplace/actions/generate-documentation
 
+name: jsdoc
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          
+      - name: Install JSDocs
+        working-directory: ./source
+        run: npm install -g jsdoc
+        
+      - name: run JSDoc
+        working-directory: ./source
+        run: jsdoc ![Sum .js]! -d ../docs
+                
+      - name: Commit files
+        run: |
+          git add .
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "CI: Automated build push" -a
+          git push
+      
+      
+    
