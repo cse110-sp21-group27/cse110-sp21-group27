@@ -1,6 +1,4 @@
-
-
-name: jsdoc
+name: Document Generator
 
 on:
   pull_request:
