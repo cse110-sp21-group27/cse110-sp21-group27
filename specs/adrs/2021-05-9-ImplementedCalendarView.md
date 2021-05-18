@@ -21,7 +21,7 @@ Choose to add Daily and weekly view to allow task to be tracked as well as allow
 * This will lead to highly reduced the complexity of things that we were planning to implement such as upcoming tasks.
 
 ### Negative Consequences
-* NA
+* It may be difficult to implement and Append information to.
 
 ## Pros and Cons of the Options
 * Pros,the calendar view in our Bullet Journal would allow users to better plan tasks and view progress of tasks.

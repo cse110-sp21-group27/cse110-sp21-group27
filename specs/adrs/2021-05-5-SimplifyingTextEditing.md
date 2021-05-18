@@ -7,7 +7,7 @@
 
 ## Context and Problem Statement
 
-Our team took feedback from the professor's office hours as well as TAmeeting and came to conclusion to simplify the text editing area of our bullet Journal.
+Our team took feedback from the professor's office hours as well as TA meeting and came to conclusion to simplify the text editing area of our bullet Journal.
 
 ## Considered Options
 
@@ -21,6 +21,7 @@ We ended up keeping the text editing area very simple where it is just bullets a
 ### Positive Consequences
 
 * Allow for quick logging
+* Easier to implement
 
 ### Negative Consequences
 * NA
