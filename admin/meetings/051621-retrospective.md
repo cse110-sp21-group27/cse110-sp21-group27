@@ -1,5 +1,5 @@
 # Sprint #1 Retrospective
-### Duration May 6th - Math 16th
+### Duration May 6th - May 16th
 ## 1) Group 27: Bean Bag Boys
 
 ### *Date, time & location & writer:*
