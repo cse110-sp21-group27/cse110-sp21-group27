@@ -14,14 +14,14 @@
 **Author:** `Gourab Dastider`
 
 ### Team members Present:
-Gourab Dastider
-Samyak Karnavat
-Alan Tram (Out with Severe illness, Recapped asynchronously with Team Leads)
-Sarah Meng
-Raymond Wang
-Xun Zhu
-Issac Navarro
-Richie Porras
+Gourab Dastider  
+Samyak Karnavat  
+Alan Tram (Out with Severe illness, Recapped asynchronously with Team Leads)  
+Sarah Meng  
+Raymond Wang  
+Xun Zhu  
+Issac Navarro  
+Richie Porras  
 
 ### The Summary of the Sprint Review
 - We began with an overview of the tasks that we planned for Sprint#1 and brushed up with the upcoming deadlines which many of the sprint plans were created to address. This was handled in a quick discussion held by Gourab, Samyak, Richie, Raymond, and Sarah.
