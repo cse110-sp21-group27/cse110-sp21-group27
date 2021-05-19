@@ -1,0 +1,130 @@
+#main_page {
+	display: grid;
+	grid-template-columns: calc(25% - 1px) calc(50% - 2px) calc(25% - 1px);
+}
+
+#schedule_view_tab, #focus_items_tab, #cards_tab {
+	text-align: center;
+	border-style: solid;
+	border-width: 2px;
+}
+
+html, body, #main_page {
+	margin: 0px;
+	height: 100%;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+#schedule_view_tab {
+	display: grid;
+	grid-template-rows: 100px 50px 60px 500px 60px;
+}
+
+#focus_items_tab {
+	display: grid;
+	grid-template-rows: 100px 50px 60px 50px 100px 30px 60px 10px 300px;
+}
+
+#cards_tab {
+	display: grid;
+	grid-template-rows: 100px 50px 60px 50px 500px;
+}
+
+#schedule_h1, #focus_h1, #cards_h1 {
+	margin: auto;
+	padding: 0px;
+	height: auto;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+#daily_button {
+	grid-row-start: 3;
+	grid-row-end: 4;
+	width: 40%;
+	height: 100%;
+	border-radius: 30px;
+	margin: auto;
+	font-size: 24px;
+}
+
+#weekly_button {
+	grid-row-start: 5;
+	grid-row-end: 6;
+	width: 50%;
+	height: 100%;
+	border-radius: 30px;
+	margin: auto;
+	font-size: 24px;
+}
+
+#focus_button {
+	grid-row-start: 3;
+	grid-row-end: 4;
+	width: 35%;
+	height: 100%;
+	border-radius: 30px;
+	margin: auto;
+	font-size: 24px;
+}
+
+#focus_completed {
+	grid-row-start: 5;
+	grid-row-end: 6;
+	width: 50%;
+	height: 100%;
+	margin: auto;
+}
+
+#focus_h2 {
+	margin: auto;
+	padding: 0px;
+	height: auto;
+	grid-row-start: 7;
+	grid-row-end: 8;
+}
+
+#focus_items_list {
+	grid-row-start: 9;
+	grid-row-end: 10;
+}
+
+#focus_items_list > textarea {
+	width: 50%;
+	height: 60px;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#cards_button {
+	grid-row-start: 3;
+	grid-row-end: 4;
+	width: 50%;
+	height: 100%;
+	border-radius: 30px;
+	margin: auto;
+	font-size: 24px;
+}
+
+#cards_list {
+	grid-row-start: 5;
+	grid-row-end: 6;
+}
+
+#cards_list > textarea {
+	width: 50%;
+	height: 60px;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
