@@ -77,8 +77,13 @@
 				</div>
 
 				<div>
-					<label>Duration</label><br>
+					<label>Duration (minutes)</label><br>
 					<input type="number" id="inp3" class="focus_input" name="duration" placeholder="In Minutes" value="0" min="0" oninput="validity.valid||(value='');">
+					<label for="startCalendar"><b>Start:</b></label>
+					<input type="date" id="startCalendar" placeholder="" name="startCalendar" required><br>
+
+					<label for="endCalendar"><b>End:</b></label>
+					<input type="date" id="endCalendar" placeholder="" name="endCalendar" required>
 				</div>
 
 
