@@ -48,6 +48,14 @@ function display(){
         var img_div = document.createElement("div");    
         var details = document.createElement("div");    
         var duration = document.createElement("div");  
+        //
+        var startDate = document.createElement('div');
+        startDate.innerHTML += document.getElementById('startCalendar').value;
+        var endDate = document.createElement('div');
+        endDate.innerHTML += document.getElementById('endCalendar').value;
+
+        bottom_half.appendChild(startDate);
+        bottom_half.appendChild(endDate);
         img_div.className = "grid-item-1";  
         details.className = "grid-item-2";  
         duration.className = "grid-item-3";
