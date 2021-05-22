@@ -118,6 +118,8 @@ h2 {
 #focus_items_list {
 	grid-row-start: 9;
 	grid-row-end: 10;
+	height: 500px;
+	overflow: auto;
 }
 
 #focus_items_list > textarea {
@@ -142,6 +144,8 @@ h2 {
 #cards_list {
 	grid-row-start: 5;
 	grid-row-end: 6;
+	height: auto;
+	overflow:auto;
 }
 
 #cards_list > textarea {
