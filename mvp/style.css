@@ -68,19 +68,43 @@ h2 {
 #focus_button {
 	grid-row-start: 3;
 	grid-row-end: 4;
-	width: 35%;
+	width: 50%;
 	height: 100%;
 	border-radius: 30px;
 	margin: auto;
 	font-size: 24px;
 }
 
+#focus_button span{
+	font-size: 27px;
+}
+
 #focus_completed {
 	grid-row-start: 5;
 	grid-row-end: 6;
-	width: 50%;
+	width: 30%;
 	height: 100%;
 	margin: auto;
+	border: 2px solid black;
+	padding: 10px 0 10px;
+	border-radius: 5px;
+}
+
+#focus_completed img {
+	width: 30px;
+	height: 30px;
+}
+
+
+.focus_completed_left{
+	float: left;
+	width: 30%;
+}
+
+.focus_completed_right{
+	float: right;
+	width: 70%;
+	font-weight: bold;
 }
 
 #focus_h2 {
@@ -94,6 +118,8 @@ h2 {
 #focus_items_list {
 	grid-row-start: 9;
 	grid-row-end: 10;
+	height: 500px;
+	overflow: auto;
 }
 
 #focus_items_list > textarea {
@@ -118,6 +144,8 @@ h2 {
 #cards_list {
 	grid-row-start: 5;
 	grid-row-end: 6;
+	height: auto;
+	overflow:auto;
 }
 
 #cards_list > textarea {
@@ -127,4 +155,149 @@ h2 {
 	margin-right: 25%;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+  
+#focus_items_tab {
+	font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	
+}
+
+
+#focus_modal{
+	position: fixed;
+	z-index: 10000;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	right: 0;
+	bottom: 0;
+	left: 0%;
+	margin: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+
+#focus_modal_content{
+	width: 300px;
+	padding: 50px;
+	margin: auto;
+	margin-top: 100px;
+	background-color: white;
+	border-radius: 5px;
+	
+}
+
+.clear{
+	clear: both;
+}
+
+ 
+#focus_modal_cancel{
+	font-size: 25px;
+	float: left;
+	width: 10%;
+}
+
+#focus_modal_header{
+	float: right;
+	width: 90%;
+	font-weight: bold;
+	padding-top: 5px;
+	font-size: 20px;
+
+	text-align: center;
+}
+
+#focus_header{
+	border-bottom: 1px solid grey;
+	padding-bottom: 20px;
+}
+
+#focus_form{
+	padding-top: 30px;
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.focus_input{
+	background-color: #F9F9FB;
+	border-radius: 5px;
+	width: 100%;
+	border: 1px solid lightgray;
+	padding: 10px;
+	margin: 10px 0 20px 0;
+
+}
+
+.focus_single_item{
+	grid-row-start: 5;
+	grid-row-end: 6;
+	width: 70%;
+	margin: auto;
+	border: 2px solid black;
+	padding: 10px 0 10px;
+	border-radius: 5px;
+	text-align: left!important;
+	margin-bottom: 20px;
+}
+
+
+.focus_single_item_inner {
+	width: 100%;
+	display: inline-grid;
+  	grid-template-columns: 20% 50% 30%;
+}
+
+.grid-item-1 {
+	font-size: 30px;
+	text-align: center;
+}
+
+.grid-item-2 {
+	font-size: 20px;
+}
+
+.grid-item-3 {
+	font-size: 15px;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.focus_tag{
+	background-color: lightgreen;
+	color: green;
+	display: inline-block;
+	font-size: 12px;
+	padding: 5px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+#focus_item_create{
+	background-color: black;
+	color: white;
+	padding: 5px;
+	width: 100%;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+.bottom_half{
+	margin-top: 20px;;
+}
+
+.done_image{
+	cursor: pointer;
+	float: right;
+	width: 25px;
+	padding-right: 10px;
+}
+
+.edit_focus{
+	cursor: pointer;
+	float: left;
+	width: 100px;
+	font-size: 18px;
+	padding-left: 10px;
 }

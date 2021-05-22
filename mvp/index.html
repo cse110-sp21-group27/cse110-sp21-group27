@@ -16,19 +16,22 @@
 
 		<div id="focus_items_tab">
 			<h1 id="focus_h1">Focus Items</h1>
-			<button id="focus_button">Add New Focus Item</button>
-			<textarea id="focus_completed">Focus Items Completed: 2</textarea>
+			<button id="focus_button">Add New Focus Item <span onclick="add_new_focus()">&oplus;</span></button>
+			<div id="focus_completed">
+				<div>
+					<span class="focus_completed_left">
+						<img src="images/checkbox.png"/>
+					</span>
+					<span class="focus_completed_right">
+						Focus Items Completed
+					</span>
+					<div class="clear"></div>
+				</div>
+				<h2 id="focus_completed_number">0</h2>
+			</div>
 			<h2 id="focus_h2">Current Focus Items</h2>
-			<div id="focus_items_list" style="overflow:auto; height:500px;">
-				<textarea>Focus Item 1</textarea>
-				<textarea>Focus Item 2</textarea>
-				<textarea>Focus Item 3</textarea>
-				<textarea>Focus Item 4</textarea>
-				<textarea>Focus Item 4</textarea>
-				<textarea>Focus Item 4</textarea>
-				<textarea>Focus Item 4</textarea>
-				<textarea>Focus Item 4</textarea>
-				<textarea>Focus Item 4</textarea>
+			<div id="focus_items_list">
+				
 			</div>
 		</div>
 
@@ -47,4 +50,56 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="focus_modal" class="modal-window">
+		<div id="focus_modal_content">
+			<div id="focus_header">
+				<span id="focus_modal_cancel" onclick="close_modal()">&laquo;</span>
+				<span id="focus_modal_header">Create Focus Item</span>
+				<div class="clear"></div>
+			</div>
+
+			<form id="focus_form" onsubmit="return validateMyForm();">
+
+				<div>
+					<label>Name</label><br>
+					<input id="inp1" class="focus_input" name="name" placeholder="Insert Name Here" required="required">
+				</div>
+
+				<div>
+					<label>Tags</label><br>
+					<select  id="inp2" class="focus_input" name="tag"  required="required">
+						<option value="Health">Health</option>
+						<option value="Academics">Academics</option>
+						<option value="Personal">Personal</option>
+						<option value="Urgent">Urgent</option>
+						<option value="Financials">Financials</option>
+						<option value="Work">Work</option>
+						<option value="Family">Family</option>
+						<option value="Cleaning">Cleaning</option>
+					</select>
+				</div>
+
+				<div>
+					<label>Duration (minutes)</label><br>
+					<input type="number" id="inp3" class="focus_input" name="duration" placeholder="In Minutes" value="0" min="0" oninput="validity.valid||(value='');">
+					<label for="startCalendar"><b>Start:</b></label>
+					<input type="date" id="startCalendar" placeholder="" name="startCalendar" required><br>
+
+					<label for="endCalendar"><b>End:</b></label>
+					<input type="date" id="endCalendar" placeholder="" name="endCalendar" required>
+				</div>
+
+
+				<button id="focus_item_create">
+					Create
+				</button>
+			</form>
+			
+
+		</div>
+
+	</div>
+	<script src="script.js"></script>
+	
 </body>
