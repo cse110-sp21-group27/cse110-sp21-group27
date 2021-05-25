@@ -161,3 +161,10 @@ function validateMyForm(){
 
   
 }
+
+function add_card() {
+    let new_card = document.createElement("textarea");
+    new_card.innerHTML = "New Card";
+    let card_container = document.getElementById("cards_list");
+    card_container.appendChild(new_card);
+}
