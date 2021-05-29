@@ -24,7 +24,7 @@ jobs:
         
       - name: run JSDoc
         working-directory: ./source
-        run: jsdoc index.js -d ../docs
+        run: jsdoc script.js -d ../docs
         
       # Adopted some of the commit file template from https://github.com/marketplace/actions/generate-documentation
       - name: Commit files
