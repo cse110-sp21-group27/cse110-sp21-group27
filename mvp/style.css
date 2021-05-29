@@ -73,6 +73,7 @@ h2 {
 	border-radius: 30px;
 	margin: auto;
 	font-size: 24px;
+	cursor: pointer;
 }
 
 #focus_button span{

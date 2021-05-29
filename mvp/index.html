@@ -16,7 +16,7 @@
 
 		<div id="focus_items_tab">
 			<h1 id="focus_h1">Focus Items</h1>
-			<button id="focus_button">Add New Focus Item <span onclick="add_new_focus()">&oplus;</span></button>
+			<button id="focus_button" onclick="add_new_focus()">Add New Focus Item</button>
 			<div id="focus_completed">
 				<div>
 					<span class="focus_completed_left">
@@ -83,11 +83,18 @@
 				<div>
 					<label>Duration (minutes)</label><br>
 					<input type="number" id="inp3" class="focus_input" name="duration" placeholder="In Minutes" value="0" min="0" oninput="validity.valid||(value='');">
-					<label for="startCalendar"><b>Start:</b></label>
-					<input type="date" id="startCalendar" placeholder="" name="startCalendar" required><br>
+					
+				</div>
 
-					<label for="endCalendar"><b>End:</b></label>
-					<input type="date" id="endCalendar" placeholder="" name="endCalendar" required>
+				<div>
+					<label for="startCalendar">Start:</label><br>
+					<input type="date" class="focus_input" id="startCalendar" placeholder="" name="startCalendar" required><br>
+
+				</div>
+
+				<div>
+					<label for="endCalendar">End:</label><br>
+					<input type="date" class="focus_input" id="endCalendar" placeholder="" name="endCalendar" required>
 				</div>
 
 
@@ -101,5 +108,11 @@
 
 	</div>
 	<script src="script.js"></script>
+	<script>
+
+		display();
+
+		document.getElementById("focus_modal").style.display = "none";
+	</script>
 	
 </body>

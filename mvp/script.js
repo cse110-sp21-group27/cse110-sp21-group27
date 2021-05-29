@@ -9,11 +9,10 @@ focus_items[0]["completed"] =1;
 focus_items[0]["tag"] ="Work";
 focus_items[0]["name"] ="UI Design";
 focus_items[0]["duration"] ="40";
+focus_items[0]["start"] ="2021-05-12";
+focus_items[0]["end"] ="2021-05-13";
 itemsID++;
 
-display();
-
-document.getElementById("focus_modal").style.display = "none";
 
 function add_new_focus() {
     editID = NaN;
@@ -22,6 +21,8 @@ function add_new_focus() {
 }
 
 function close_modal(){
+    editID = NaN;
+    document.getElementById("focus_form").reset();
     document.getElementById("focus_modal").style.display = "none";
 }
 
@@ -48,14 +49,7 @@ function display(){
         var img_div = document.createElement("div");    
         var details = document.createElement("div");    
         var duration = document.createElement("div");  
-        //
-        var startDate = document.createElement('div');
-        startDate.innerHTML += document.getElementById('startCalendar').value;
-        var endDate = document.createElement('div');
-        endDate.innerHTML += document.getElementById('endCalendar').value;
 
-        bottom_half.appendChild(startDate);
-        bottom_half.appendChild(endDate);
         img_div.className = "grid-item-1";  
         details.className = "grid-item-2";  
         duration.className = "grid-item-3";
@@ -65,11 +59,12 @@ function display(){
         img_div.appendChild(img);
         top_half.className = "focus_single_item_inner";
         img_div.setAttribute("width", "10%");
-        details.setAttribute("width", "60%");
-        duration.setAttribute("width", "30%");
+        details.setAttribute("width", "50%");
+        duration.setAttribute("width", "40%");
 
         var name =  document.createElement("div");
         name.innerHTML = item.name;
+        name.className = "focus_name";
         var tag =  document.createElement("div");
         tag.innerHTML = item.tag;
         tag.className = "focus_tag";
@@ -82,9 +77,23 @@ function display(){
 
         if(item.duration){
             var durationtext = document.createElement("span");
-            durationtext.innerHTML = item.duration +" Minutes";
+            durationtext.innerHTML = item.duration +" Minutes\n";
+            duration.appendChild(durationtext); 
+            var durationtext = document.createElement("br");
             duration.appendChild(durationtext); 
         }
+
+        if(item.start){
+            var durationtext = document.createElement("span");
+            durationtext.innerHTML = item.start;
+            duration.appendChild(durationtext); 
+            var durationtext = document.createElement("br");
+            duration.appendChild(durationtext); 
+            var durationtext = document.createElement("span");
+            durationtext.innerHTML = item.end;
+            duration.appendChild(durationtext); 
+        }
+
 
         top_half.appendChild(duration);  
 
@@ -131,6 +140,8 @@ function edit(id){
     document.getElementById("inp1").value = focus_items[id]['name'];
     document.getElementById("inp2").value = focus_items[id]['tag'];
     document.getElementById("inp3").value = focus_items[id]['duration'];
+    document.getElementById("startCalendar").value = focus_items[id]['start'];
+    document.getElementById("endCalendar").value = focus_items[id]['end'];
 }
 
 
@@ -139,7 +150,14 @@ function validateMyForm(){
     var inp1 = document.getElementById("inp1").value;
     var inp2 = document.getElementById("inp2").value;
     var inp3 = parseInt(document.getElementById("inp3").value);
+    var inp4 = document.getElementById("startCalendar").value;
+    var inp5 = document.getElementById("endCalendar").value;
     var ID= itemsID;
+
+    if(inp4 > inp5){
+        alert("Start date cannot be greater than end date.");
+        return false;
+    }
     if(isNaN(editID) == false){
         ID = editID;
         editID = NaN;
@@ -153,6 +171,8 @@ function validateMyForm(){
     focus_items[ID]["tag"] = inp2;
     focus_items[ID]["name"] = inp1;
     focus_items[ID]["duration"] = inp3;
+    focus_items[ID]["start"] = inp4;
+    focus_items[ID]["end"] = inp5;
 
     close_modal();
     display();
@@ -168,3 +188,9 @@ function add_card() {
     let card_container = document.getElementById("cards_list");
     card_container.appendChild(new_card);
 }
+
+
+function add(a, b) {
+    return a + b;
+}
+  
