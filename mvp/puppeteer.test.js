@@ -27,7 +27,42 @@ describe('Testing Focus Items ', () => {
         expect(status).toBe("none");
     });
 
-    it('Test4: Create Button Adds Item to Display', async() => {
+    it('Test4: Compare Focus Item Count', async() => {
+        const count = await page.$eval("#focus_completed_number", (c) => {
+            return parseInt(c.innerHTML);
+        })
+
+        const count2 = await page.$$eval('img', (entries) => {
+            var count3 = 0;
+            for(i = 0; i < entries.length; i++)
+            {
+                if(entries[i].src.includes("images/tick.png"))
+                count3++
+            }
+            return count3
+        });
+        expect(count2).toBe(count);
+    });
+
+    it('Test5: Uncheck Item and Compare Focus Item Count', async() => {
+        await page.click('.done_image');
+        const count = await page.$eval("#focus_completed_number", (c) => {
+            return parseInt(c.innerHTML);
+        })
+
+        const count2 = await page.$$eval('img', (entries) => {
+            var count3 = 0;
+            for(i = 0; i < entries.length; i++)
+            {
+                if(entries[i].src.includes("images/tick.png"))
+                count3++
+            }
+            return count3
+        });
+        expect(count2).toBe(count);
+    });
+
+    /* it('Test4: Create Button Adds Item to Display', async() => {
         
     });
 
@@ -41,7 +76,7 @@ describe('Testing Focus Items ', () => {
 
     it('Test7: Edit Button Opens Modal View', async() => {
 
-    });
+    }); */
    
 
 
