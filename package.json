@@ -9,7 +9,14 @@
   "jest": {
     "preset": "jest-puppeteer",
     "verbose": true
- },
+  },
   "author": "Bean Bag Boys",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest-puppeteer": "^5.0.4",
+    "puppeteer": "^9.1.1"
+  },
+  "dependencies": {
+    "yarn": "^1.22.10"
+  }
 }
