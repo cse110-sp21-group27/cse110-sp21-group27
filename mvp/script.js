@@ -65,6 +65,7 @@ function display(){
         var name =  document.createElement("div");
         name.innerHTML = item.name;
         name.className = "focus_name";
+        name.id = "name"+i;
         var tag =  document.createElement("div");
         tag.innerHTML = item.tag;
         tag.className = "focus_tag";
@@ -112,6 +113,7 @@ function display(){
         edit.className = "edit_focus";
         edit.innerHTML =  "&#x270E; Edit"
         edit.setAttribute("onclick", "edit("+i+")");
+        edit.id = "edit"+i;
 
         var check = document.createElement("div");
         
@@ -155,9 +157,10 @@ function validateMyForm(){
     var ID= itemsID;
 
     if(inp4 > inp5){
-        alert("Start date cannot be greater than end date.");
+        document.getElementById("warning").innerHTML = "Start date cannot be greater than end date.";
         return false;
     }
+    document.getElementById("warning").innerHTML = "";
     if(isNaN(editID) == false){
         ID = editID;
         editID = NaN;
@@ -193,5 +196,5 @@ function add_card() {
 function add(a, b) {
     return a + b;
 }
-
+  
 module.exports = add;
