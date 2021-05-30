@@ -3,7 +3,7 @@ var itemsID = 0;
 var editID = NaN;
 
 focus_items[0] = [];
-
+// Default Display
 focus_items[0]["id"] = itemsID;
 focus_items[0]["completed"] =1;
 focus_items[0]["tag"] ="Work";
