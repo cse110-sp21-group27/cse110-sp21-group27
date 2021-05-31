@@ -7,6 +7,7 @@
 	text-align: center;
 	border-style: solid;
 	border-width: 2px;
+	overflow: auto;
 }
 
 html, body, #main_page {
@@ -120,7 +121,7 @@ h2 {
 	grid-row-start: 9;
 	grid-row-end: 10;
 	height: 500px;
-	overflow: auto;
+	/* overflow: auto; */
 }
 
 #focus_items_list > textarea {
@@ -146,7 +147,7 @@ h2 {
 	grid-row-start: 5;
 	grid-row-end: 6;
 	height: auto;
-	overflow:auto;
+	/* overflow:auto; */
 }
 
 #cards_list > textarea {
