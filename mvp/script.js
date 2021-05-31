@@ -183,8 +183,14 @@ function validateMyForm(){
 }
 
 function add_card() {
-    let new_card = document.createElement("textarea");
-    new_card.innerHTML = "New Card";
+    let new_card = document.createElement("div");
+    let new_date = document.createElement("p");
+    let new_text = document.createElement("textarea");
+    let d = new Date();
+    new_date.innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
+    new_text.innerHTML = "Enter Text";
+    new_card.appendChild(new_date);
+    new_card.appendChild(new_text);
     let card_container = document.getElementById("cards_list");
     card_container.appendChild(new_card);
 }
