@@ -1,4 +1,4 @@
-# Sprint #1 Retrospective
+# Sprint #2 Retrospective
 ### Duration May 16th - May 31st
 ## 1) Group 27: Bean Bag Boys
 
