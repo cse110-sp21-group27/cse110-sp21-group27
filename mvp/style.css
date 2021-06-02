@@ -60,6 +60,10 @@ h2 {
 	grid-row-start: 1;
 	grid-row-end: 2;
 	font-weight: bold;
+	color: white;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black;
+
 }
 
 #daily_button {
