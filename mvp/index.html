@@ -6,7 +6,25 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+	
+	<script type="text/javascript">
+	(function() {
+	
+	var img = document.getElementById('schedule_view_tab').firstChild;
+	img.onload = function() {
+		if(img.height > img.width) {
+			img.height = '100%';
+			img.width = 'auto';
+		}
+	};
+	
+	}());
+	</script>
+
+
+
 	<div id="main_page">
 		<div id="schedule_view_tab">
 			<h1 id="schedule_h1">Schedule View</h1>
@@ -17,7 +35,8 @@
 		<div id="focus_items_tab">
 			<h1 id="focus_h1">Focus Items</h1>
 			<button id="focus_button" onclick="add_new_focus()">Add New Focus Item</button>
-			<div id="focus_completed">
+			
+			<div id="focus_completed" >
 				<div>
 					<span class="focus_completed_left">
 						<img src="images/checkbox.png"/>
@@ -29,14 +48,16 @@
 				</div>
 				<h2 id="focus_completed_number">0</h2>
 			</div>
+			
 			<h2 id="focus_h2">Current Focus Items</h2>
 			<div id="focus_items_list">
+				
 				
 			</div>
 		</div>
 
 		<div id="cards_tab">
-			<h1 id="cards_h1">Cards</h1>
+			<h1 id="focus_h1">C</h1>
 			<button id="cards_button" onclick="add_card()">Add a Card</button>
 			<div id="cards_list" style="overflow:auto; height:650px;"></div>
 		</div>

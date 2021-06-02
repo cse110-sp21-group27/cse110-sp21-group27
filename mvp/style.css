@@ -25,16 +25,32 @@ h2 {
 #schedule_view_tab {
 	display: grid;
 	grid-template-rows: 100px 50px 60px 500px 60px;
+	background-image: url('images/schedule-views-img-2.svg');
+	background-position: center;
+	background-color: rgb(201, 198, 198); /* Tint color */
+	background-blend-mode: multiply;
+	font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+	Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 #focus_items_tab {
 	display: grid;
 	grid-template-rows: 100px 50px 60px 50px 100px 30px 60px 10px 300px;
+	background-image: url('images/focus\ items\ background.svg');
+	background-position: center;
+	background-color: rgb(236, 236, 236); /* Tint color */
+	background-blend-mode: multiply;
 }
 
 #cards_tab {
 	display: grid;
 	grid-template-rows: 100px 50px 60px 50px 500px;
+	background-image: url('images/cards\ background.svg');
+	background-position: center;
+	background-color: rgb(236, 236, 236); /* Tint color */
+	background-blend-mode: multiply;
+	font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+	Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 #schedule_h1, #focus_h1, #cards_h1 {
@@ -43,6 +59,7 @@ h2 {
 	height: auto;
 	grid-row-start: 1;
 	grid-row-end: 2;
+	font-weight: bold;
 }
 
 #daily_button {
@@ -53,6 +70,7 @@ h2 {
 	border-radius: 30px;
 	margin: auto;
 	font-size: 24px;
+	font-weight: bold;
 }
 
 #weekly_button {
@@ -63,6 +81,7 @@ h2 {
 	border-radius: 30px;
 	margin: auto;
 	font-size: 24px;
+	font-weight: bold;
 }
 
 #focus_button {
@@ -74,6 +93,7 @@ h2 {
 	margin: auto;
 	font-size: 24px;
 	cursor: pointer;
+	font-weight: bold;
 }
 
 #focus_button span{
@@ -89,6 +109,7 @@ h2 {
 	border: 2px solid black;
 	padding: 10px 0 10px;
 	border-radius: 5px;
+	background-color: white;
 }
 
 #focus_completed img {
@@ -130,6 +151,7 @@ h2 {
 	margin-right: 25%;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	
 }
 
 #cards_button {
@@ -140,6 +162,8 @@ h2 {
 	border-radius: 30px;
 	margin: auto;
 	font-size: 24px;
+	font-weight: bold;
+	
 }
 
 #cards_list {
@@ -157,13 +181,15 @@ h2 {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border: 2px solid black;
+	
 }
 
 #cards_list > div > p {
 	margin-bottom: 8px;
 	font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 18px;
+	font-size: 20px;
+	
 }
 
 #cards_list > div > textarea {
@@ -265,6 +291,7 @@ h2 {
 	border-radius: 5px;
 	text-align: left!important;
 	margin-bottom: 20px;
+	background-color: white;
 }
 
 
@@ -310,6 +337,7 @@ h2 {
 
 .bottom_half{
 	margin-top: 20px;;
+	
 }
 
 .done_image{
@@ -325,4 +353,34 @@ h2 {
 	width: 100px;
 	font-size: 18px;
 	padding-left: 10px;
+};
+
+
+div.imgcontainer{
+	width:718px;
+	height:600px;
+	}
+
+.background-img{
+	opacity:1;
+	filter: saturate(70%) brightness(80%) opacity(70%);
 }
+
+button {
+	filter: blur(0px);
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+  }
+
+  .focus_name{
+	font-weight: bold;
+  }
+
+  .edit_focus{
+	font-weight: bold;
+  }
