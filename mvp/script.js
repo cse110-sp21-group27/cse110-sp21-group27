@@ -1,6 +1,9 @@
+import { storeData } from database.js;
+
 var focus_items = []; 
 var itemsID = 0;
 var editID = NaN;
+var cardsId = 0;
 
 focus_items[0] = [];
 // Default Display
@@ -182,15 +185,20 @@ function validateMyForm(){
   
 }
 
-function add_card() {
+export function add_card() {
     let new_card = document.createElement("div");
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
     let d = new Date();
     new_date.innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
     new_text.innerHTML = "Enter Text";
+    new_card.classList.add("card"+cardsId);
+    cardsId++;
     new_card.appendChild(new_date);
     new_card.appendChild(new_text);
+    new_card.addEventListener("change",storeData);
+    new_date.addEventListener("change",storeData);
+    new_text.addEventListener("change",storeData);
     let card_container = document.getElementById("cards_list");
     card_container.appendChild(new_card);
 }
