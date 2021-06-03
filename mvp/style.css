@@ -144,7 +144,7 @@ h2 {
 #focus_items_list {
 	grid-row-start: 9;
 	grid-row-end: 10;
-	height: 500px;
+	height: auto;
 	overflow: auto;
 }
 
@@ -221,6 +221,7 @@ h2 {
 
 
 #focus_modal{
+	overflow: scroll;
 	position: fixed;
 	z-index: 10000;
 	width: 100%;
@@ -237,7 +238,7 @@ h2 {
 	width: 300px;
 	padding: 50px;
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 25px;
 	background-color: white;
 	border-radius: 5px;
 	
@@ -388,3 +389,18 @@ button {
   .edit_focus{
 	font-weight: bold;
   }
+
+
+#warning{
+	color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.delete_image{
+	cursor: pointer;
+	float: right;
+	width: 25px;
+	padding-right: 10px;
+}

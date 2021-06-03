@@ -59,7 +59,7 @@
 		<div id="cards_tab">
 			<h1 id="focus_h1">Cards</h1>
 			<button id="cards_button" onclick="add_card()">Add a Card</button>
-			<div id="cards_list" style="overflow:auto; height:650px;"></div>
+			<div id="cards_list" style="overflow:auto; height:auto;"></div>
 		</div>
 	</div>
 
@@ -72,7 +72,7 @@
 			</div>
 
 			<form id="focus_form" onsubmit="return validateMyForm();">
-
+				<div id="warning"></div>
 				<div>
 					<label>Name</label><br>
 					<input id="inp1" class="focus_input" name="name" placeholder="Insert Name Here" required="required">
@@ -97,7 +97,7 @@
 					<input type="number" id="inp3" class="focus_input" name="duration" placeholder="In Minutes" value="0" min="0" oninput="validity.valid||(value='');">
 					
 				</div>
-<!-- fix the date period problem -->
+
 				<div>
 					<label for="startCalendar">Start:</label><br>
 					<input type="date" class="focus_input" id="startCalendar" placeholder="" name="startCalendar" required><br>
@@ -110,13 +110,12 @@
 				</div>
 
 
-				<button id="focus_item_create">
-					Create
-				</button>
+				<input type="submit" value="Create" id="focus_item_create">
 			</form>
 			
 
 		</div>
+
 
 	</div>
 	<script src="script.js"></script>
