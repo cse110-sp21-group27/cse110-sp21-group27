@@ -102,18 +102,21 @@ function display(){
             top_half.appendChild(duration);  
 
             var done = document.createElement("img");
-            done.className = "done_image";
+            done.id = "done"+item.id;
             if(item.completed){
+                done.className = "done_image";
                 done.setAttribute('src', 'images/tick.png');
                 done.setAttribute("onclick", "check("+i+",0)");
             }
             else{
+                done.className = "notdone_image";
                 done.setAttribute('src', 'images/tick-blank.png');
                 done.setAttribute("onclick", "check("+i+",1)");
             }
 
             var deleteIcon = document.createElement("img");
             deleteIcon.className = "delete_image";
+            deleteIcon.id = "delete"+item.id;
             deleteIcon.setAttribute('src', 'images/trash.png');
             deleteIcon.setAttribute("onclick", "deleteData("+i+",1)");
 

@@ -345,7 +345,7 @@ h2 {
 	
 }
 
-.done_image{
+.done_image, .notdone_image{
 	cursor: pointer;
 	float: right;
 	width: 25px;
