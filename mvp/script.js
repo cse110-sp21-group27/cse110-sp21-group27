@@ -182,14 +182,26 @@ function validateMyForm(){
   
 }
 
+function remove_card(card,date,text,image) {
+    text.remove();
+    date.remove();
+    image.remove();
+    card.remove();
+}
+
 function add_card() {
     let new_card = document.createElement("div");
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
+    let cross_img = document.createElement("img");
     let d = new Date();
     new_date.innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
     new_text.innerHTML = "Enter Text";
+    cross_img.src = "./images/cross-icon.png";
+    cross_img.alt = "X";
+    cross_img.addEventListener("click",() => { remove_card(new_card,new_date,new_text,cross_img); });
     new_card.appendChild(new_date);
+    new_card.appendChild(cross_img);
     new_card.appendChild(new_text);
     let card_container = document.getElementById("cards_list");
     card_container.appendChild(new_card);
