@@ -4,10 +4,207 @@
 	<meta charset="utf-8">
 	<title>MVP Team 27</title>
 	<link rel="stylesheet" href="style.css">
+	<style>
+		#box {
+		  width: 470px;
+		  height: 14px;
+		  border: 1px solid #aaaaaa;
+		  position: static;
+		  left: 33%;
+		}
+	  
+		 .element {
+		  width: 470px;
+		  border: 1px solid #aaaaaa;
+		}
+	  
+		   #element2 {
+		  width: 470px;
+		  border: 1px solid #aaaaaa;
+		}
+	  
+		</style>
+		
+		<!--drag and drop function -->
+		<script>
+	  
+	  // Intentions to keep focus items continously draggable to multiple boxes.
+	  // Currently focus item is a one time drag and drop action 
+	  
+	  
+		function allowDrop(ev) {
+		  ev.preventDefault();
+		}
+	  
+		function drag(ev) {
+		  ev.dataTransfer.setData("text", ev.target.id);
+		  
+		}
+	  
+		function drop(ev) {
+		  ev.preventDefault();
+		  var data = ev.dataTransfer.getData("text");
+		  if(ev.target.id == "box"){
+			  console.log(ev);
+			  console.log(ev.target);
+			  console.log(data);
+			  console.log(document.getElementById(data));
+			ev.target.appendChild(document.getElementById(data));
+		  
+		  }else{
+			ev.target.parentElement.appendChild(document.getElementById(data));
+			//document.getElementById("box").appendChild(document.getElementById(data));
+		  }
+		  // this is causing tasks to appear nested visually
+		  //change target to be box
+		}
+		</script>
 </head>
 
 
 <body>
+	<table class="dailyFocus">
+		<td id = "element" img id="drag2" draggable="true" ondragstart="drag(event)" colspan="4" rowspan="1" class="stage-saturn">Welcome</td>
+	
+	</table>
+	<!--Start of Daily View-->
+	<table>
+		<h1 id="return">Return</h1>
+		<h1 id="weekly">Weekly View</h1>
+
+		<div id="event_tab">
+			<h1 id="focus_h1">Add Event</h1>
+			<button id="focus_button">Add New Focus Item <span onclick="add_new_focus()">&oplus;</span></button>
+			
+			</div>
+		</div>
+		  <tr>
+			<th>    
+        08:00
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+      </tr>
+		  <tr>
+			<th>08:30</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>09:00</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>09:30</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>10:00</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>10:30</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>11:00</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>11:30</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>12:00</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>12:30</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>13:00</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>13:30</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>14:00</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>14:30</th>
+      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>15:00</th>
+        <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>15:30</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>16:00</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>16:30</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>17:00</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>17:30</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>18:00</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>18:30</th>
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>19:00</th>
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>19:30</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>20:00</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>20:30</th>
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>21:00</th>
+      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		
+	  </table>
 	
 	<script type="text/javascript">
 	/*(function() {
@@ -120,8 +317,6 @@
 
 	</div>
 	<script src="script.js"></script>
-	<!--<script  src="database.js" ></script>-->
-	<script type="module" src="addCard.js" ></script>
 	<script>
 		window.addEventListener('DOMContentLoaded', () => {
 			document.getElementById("focus_modal").style.display = "none";

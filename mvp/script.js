@@ -394,3 +394,47 @@ function loadData() {
 }
 
 document.addEventListener("DOMContentLoaded",loadData);
+
+document.getElementById('daily_button').addEventListener('click', () => {
+    console.log("clicked");
+    document.body.classList.add('settings');
+    var head = document.getElementById("return");
+
+    
+
+    let numFocusItems = db.getItem("numFocus");
+    let wrapper = document.querySelector(".dailyFocus");
+
+    
+    wrapper.innerHTML = "";
+    for(let i = 0; i < numFocusItems; i++ ) {
+        let drag = document.createElement("td");
+        drag.id = "drag";
+        drag.draggable = "true";
+        drag.ondragstart = "event.dataTransfer.setData('text', ev.target.id);";
+        drag.colSpan = "4";
+        drag.rowSpan = "1";
+        drag.classList.add("stage-saturn");
+        drag.classList.add("element");
+        let phrase = "focus" + i + "name";
+        drag.innerHTML = db.getItem(phrase);
+        wrapper.appendChild(drag);
+
+    }
+    
+
+    //head.innerHTML = "May 23, 2021 ;-;";
+    //document.body.appendChild(head);
+    //var x = document.createElement("INPUT");
+    //x.setAttribute("type", "date");
+    //var y = document.createElement("INPUT");
+    //y.setAttribute("type", "text");
+    //document.body.appendChild(x);
+    //document.body.appendChild(y);
+    head.addEventListener("click", () => {
+        document.body.classList.remove('settings');
+        //head.remove();
+        //x.remove();
+        //y.remove();
+    });
+});
