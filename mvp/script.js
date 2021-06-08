@@ -411,7 +411,9 @@ document.getElementById('daily_button').addEventListener('click', () => {
         let drag = document.createElement("td");
         drag.id = "drag";
         drag.draggable = "true";
-        drag.ondragstart = "event.dataTransfer.setData('text', ev.target.id);";
+        drag.addEventListener("dragstart", function(event){
+            event.dataTransfer.setData("text", event.target.id);
+        }, false);
         drag.colSpan = "4";
         drag.rowSpan = "1";
         drag.classList.add("stage-saturn");
