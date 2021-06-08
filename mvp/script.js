@@ -182,19 +182,71 @@ function validateMyForm(){
   
 }
 
+function remove_card(card,date,text,image) {
+    text.remove();
+    date.remove();
+    image.remove();
+    card.remove();
+}
+
+/*function makeDetails() {
+    this.value = "Enter Text";
+    this.ctrl = false;
+}
+
+var details = new makeDetails();*/
+
+function handleKeyDown(event,text,details) {
+    console.log("down: " + event.key);
+    console.log(details);
+    details["value"] = text.value;
+    if (event.key == "Control") {
+        details["ctrl"] = true;
+    }
+}
+
+function handleKeyUp(event,text,details) {
+    console.log("up: " + event.key);
+    console.log(details);
+    if (event.key == "Control") {
+        details["ctrl"] = false;
+    }
+    if (details["ctrl"]) {
+        if (event.key == ";") {
+            details["value"] += "• ";
+            text.value = details["value"];
+        }
+        if (event.key == "'") {
+            details["value"] += "⁃ ";
+            text.value = details["value"];
+        }
+        if (event.key == "/") {
+            details["value"] += "‣ ";
+            text.value = details["value"];
+        }
+    }
+}
+
 function add_card() {
     let new_card = document.createElement("div");
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
+    let cross_img = document.createElement("img");
     let d = new Date();
+    var details = { value: "Enter Text", ctrl: false };
     new_date.innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
-    new_text.innerHTML = "Enter Text";
+    new_text.value = "Enter Text";
+    cross_img.src = "./images/cross-icon.png";
+    cross_img.alt = "X";
+    cross_img.addEventListener("click",() => { remove_card(new_card,new_date,new_text,cross_img); });
     new_card.appendChild(new_date);
+    new_card.appendChild(cross_img);
     new_card.appendChild(new_text);
     let card_container = document.getElementById("cards_list");
     card_container.appendChild(new_card);
+    new_text.addEventListener("keydown",(event) => { handleKeyDown(event,new_text,details); });
+    new_text.addEventListener("keyup",(event) => { handleKeyUp(event,new_text,details); });
 }
-
 
 function add(a, b) {
     return a + b;

@@ -155,7 +155,6 @@ h2 {
 	margin-right: 25%;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	
 }
 
 #cards_button {
@@ -178,22 +177,29 @@ h2 {
 }
 
 #cards_list > div {
-	width: 50%;
+	background-color: white;
+	width: 70%;
 	height: 250px;
-	margin-left: 25%;
-	margin-right: 25%;
+	margin-left: 15%;
+	margin-right: 15%;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border: 2px solid black;
-	
+	display: grid;
+	grid-template-rows: 50px 200px;
+	grid-template-columns: calc(100% - 30px) 30px;
 }
 
 #cards_list > div > p {
+	margin-top: 10px;
 	margin-bottom: 8px;
 	font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 20px;
-	
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 1;
+	grid-column-end: 2;
 }
 
 #cards_list > div > textarea {
@@ -206,10 +212,26 @@ h2 {
 		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size:  20px;
 	font-weight: bold;
+	background: transparent;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 1;
+	grid-column-end: 3;
 }
 
 #cards_list > div > textarea:focus {
 	outline: none !important;
+}
+
+#cards_list > div > img {
+	width: 20px;
+	height: 20px;
+	margin-top: 15px;
+	margin-right: 10px;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 2;
+	grid-column-end: 3;
 }
 
   
