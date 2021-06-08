@@ -177,10 +177,11 @@ h2 {
 }
 
 #cards_list > div {
-	width: 50%;
+	background-color: white;
+	width: 70%;
 	height: 250px;
-	margin-left: 25%;
-	margin-right: 25%;
+	margin-left: 15%;
+	margin-right: 15%;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border: 2px solid black;
