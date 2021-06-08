@@ -10,9 +10,9 @@
 <body>
 	
 	<script type="text/javascript">
-	(function() {
+	/*(function() {
 	
-	var img = document.getElementById('schedule_view_tab').firstChild;
+	var img = document.getElementById('schedule_view_tab').childNodes[0];
 	img.onload = function() {
 		if(img.height > img.width) {
 			img.height = '100%';
@@ -20,7 +20,7 @@
 		}
 	};
 	
-	}());
+	}());*/
 	</script>
 
 
@@ -71,7 +71,7 @@
 				<div class="clear"></div>
 			</div>
 
-			<form id="focus_form" onsubmit="return validateMyForm();">
+			<form id="focus_form" onsubmit="event.preventDefault(); validateMyForm();">
 
 				<div>
 					<label>Name</label><br>
@@ -120,12 +120,17 @@
 
 	</div>
 	<script src="script.js"></script>
-	<script src="database.js"></script>
+	<!--<script  src="database.js" ></script>-->
+	<script type="module" src="addCard.js" ></script>
 	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			document.getElementById("focus_modal").style.display = "none";
+			focusItemStorage();
+			
+		});
+		
 
-		display();
-
-		document.getElementById("focus_modal").style.display = "none";
+		
 	</script>
 	
 </body>
