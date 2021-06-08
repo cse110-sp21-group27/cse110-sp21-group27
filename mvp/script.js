@@ -182,10 +182,51 @@ function validateMyForm(){
   
 }
 
+// Function to change webpage background color
+function changeBodyBg(color){
+    document.querySelector("textarea").style.background = color;
+    var elem = document.getElementById("cards_list").childNodes[1];
+    elem.style.background = color;
+}
+
+
 function add_card() {
     let new_card = document.createElement("div");
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
+    
+    //yellow color button
+    let yellow_button = document.createElement("button");
+    yellow_button.innerHTML = "Yellow";
+    new_card.append(yellow_button);
+    yellow_button.addEventListener('click', () => {
+        changeBodyBg("yellow");
+    });
+
+    //green color button
+    let green_button = document.createElement("button");
+    green_button.innerHTML = "Green";
+    new_card.append(green_button);
+    green_button.addEventListener('click', () => {
+        changeBodyBg("green");
+    });
+    //blue color button
+    let blue_button = document.createElement("button");
+    blue_button.innerHTML = "Blue";
+    new_card.append(blue_button);
+    blue_button.addEventListener('click', () => {
+        changeBodyBg("blue");
+    });
+    //white color button
+    let white_button = document.createElement("button");
+    white_button.innerHTML = "White";
+    new_card.append(white_button);
+    white_button.addEventListener('click', () => {
+        changeBodyBg("white");
+    });
+
+
+
     let d = new Date();
     new_date.innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
     new_text.innerHTML = "Enter Text";
