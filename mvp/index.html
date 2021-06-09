@@ -12,6 +12,14 @@
 		  position: static;
 		  left: 33%;
 		}
+
+		#box2 {
+		  width: 670px;
+		  height: 104px;
+		  border: 1px solid #aaaaaa;
+		  position: static;
+		  left: 33%;
+		}
 	  
 		 .element {
 		  width: 470px;
@@ -44,33 +52,44 @@
 		function drop(ev) {
 		  ev.preventDefault();
 		  var data = ev.dataTransfer.getData("text");
+		  
 		  if(ev.target.id == "box"){
+			  
 			  console.log(ev);
 			  console.log(ev.target);
 			  console.log(data);
 			  console.log(document.getElementById(data));
+			  
 			ev.target.appendChild(document.getElementById(data));
 		  
 		  }else{
+			console.log(ev.target.parentElement)
 			ev.target.parentElement.appendChild(document.getElementById(data));
-			//document.getElementById("box").appendChild(document.getElementById(data));
+			document.getElementById("box").appendChild(document.getElementById(data));
 		  }
 		  // this is causing tasks to appear nested visually
 		  //change target to be box
 		}
+
 		</script>
 </head>
 
-
 <body>
 	<table class="dailyFocus">
-		<td id = "element" img id="drag2" draggable="true" ondragstart="drag(event)" colspan="4" rowspan="1" class="stage-saturn">Welcome</td>
+
 	
 	</table>
 	<!--Start of Daily View-->
 	<table>
+		<!--
+		<td colspan="4" rowspan="1" <div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		-->
+
+		<!-- this point is still not on the time grid -->
+		
 		<h1 id="return">Return</h1>
 		<h1 id="weekly">Weekly View</h1>
+        </div></td>
 
 		<div id="event_tab">
 			<h1 id="focus_h1">Add Event</h1>
@@ -78,6 +97,7 @@
 			
 			</div>
 		</div>
+
 		  <tr>
 			<th>    
         08:00

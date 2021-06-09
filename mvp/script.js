@@ -423,6 +423,8 @@ document.getElementById('daily_button').addEventListener('click', () => {
         wrapper.appendChild(drag);
 
     }
+
+    
     
 
     //head.innerHTML = "May 23, 2021 ;-;";
