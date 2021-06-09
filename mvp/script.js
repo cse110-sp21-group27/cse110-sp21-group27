@@ -40,6 +40,7 @@ function close_modal(){
     editID = NaN;
     document.getElementById("focus_form").reset();
     document.getElementById("focus_modal").style.display = "none";
+    document.getElementById("warning").innerHTML = "";
 }
 
 
@@ -240,6 +241,7 @@ function validateMyForm(){
         document.getElementById("warning").innerHTML = "Start date cannot be greater than end date.";
         return false;
     }
+    document.getElementById("warning").innerHTML = "";
     if(isNaN(editID) == false){
         ID = editID;
         editID = NaN;
