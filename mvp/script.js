@@ -42,12 +42,14 @@ function close_modal(){
     document.getElementById("focus_modal").style.display = "none";
 }
 
+
 function calculate_completed(){
     var count = 0;
     let numFocusItems = db.getItem('numFocus');
     for (i = 0 ;i < numFocusItems ;i ++) {
         let phrase = "focus" + i +"completed";
-        if(db.getItem(phrase) === "true"){
+        let staus = "focus" + i +"completed";
+        if(db.getItem(phrase) === "true" && db.getItem(staus) === "true"){
             count += 1;
         }
     }
@@ -60,51 +62,53 @@ function display(){
     //console.log(db.getItem('numFocus'));
     console.log("Display focus Items:"+numFocusItems);
     for (i = 0 ;i < numFocusItems ;i ++) {
-        var node = document.createElement("div");    
-        node.id = i;      
-        node.className = "focus_single_item";    
-        var top_half = document.createElement("div");   
-        var bottom_half = document.createElement("div");  
-        bottom_half.className = "bottom_half";  
-        var img_div = document.createElement("div");    
-        var details = document.createElement("div");    
-        var duration = document.createElement("div");  
-
-        img_div.className = "grid-item-1";  
-        details.className = "grid-item-2";  
-        duration.className = "grid-item-3";
-        var img = document.createElement("img");  
-        img.setAttribute('src', 'images/goal.png');
-        img.setAttribute('width', '50px');
-        img_div.appendChild(img);
-        top_half.className = "focus_single_item_inner";
-        img_div.setAttribute("width", "10%");
-        details.setAttribute("width", "50%");
-        duration.setAttribute("width", "40%");
-
-        var name =  document.createElement("div");
         let phrase = "focus" + i;
-        name.innerHTML = db.getItem(phrase+"name");
-        name.className = "focus_name";
-        var tag =  document.createElement("div");
-        tag.innerHTML = db.getItem(phrase+"tags");
-        tag.className = "focus_tag";
+        if(db.getItem(phrase+"show") === "true"){
+            var node = document.createElement("div");    
+            node.id = i;      
+            node.className = "focus_single_item";    
+            var top_half = document.createElement("div");   
+            var bottom_half = document.createElement("div");  
+            bottom_half.className = "bottom_half";  
+            var img_div = document.createElement("div");    
+            var details = document.createElement("div");    
+            var duration = document.createElement("div");  
 
-        details.appendChild(name);
-        details.appendChild(tag);
+            img_div.className = "grid-item-1";  
+            details.className = "grid-item-2";  
+            duration.className = "grid-item-3";
+            var img = document.createElement("img");  
+            img.setAttribute('src', 'images/goal.png');
+            img.setAttribute('width', '50px');
+            img_div.appendChild(img);
+            top_half.className = "focus_single_item_inner";
+            img_div.setAttribute("width", "10%");
+            details.setAttribute("width", "50%");
+            duration.setAttribute("width", "40%");
 
-        top_half.appendChild(img_div);  
-        top_half.appendChild(details);  
+            var name =  document.createElement("div");
+            name.innerHTML = db.getItem(phrase+"name");
+            name.className = "focus_name";
+            name.id = "name"+i;
+            var tag =  document.createElement("div");
+            tag.innerHTML = db.getItem(phrase+"tags");
+            tag.className = "focus_tag";
 
-        if(db.getItem(phrase+"duration")){
-            var durationtext = document.createElement("span");
-            durationtext.innerHTML = db.getItem(phrase+"duration");
-            duration.appendChild(durationtext); 
-            var durationtext = document.createElement("br");
-            duration.appendChild(durationtext); 
-        }
+            details.appendChild(name);
+            details.appendChild(tag);
 
-        
+            top_half.appendChild(img_div);  
+            top_half.appendChild(details);  
+
+            if(db.getItem(phrase+"duration")){
+                var durationtext = document.createElement("span");
+                durationtext.innerHTML = db.getItem(phrase+"duration");
+                durationtext.innerHTML += " Minutes";
+                duration.appendChild(durationtext); 
+                var durationtext = document.createElement("br");
+                duration.appendChild(durationtext); 
+            }
+            
             var durationtext = document.createElement("span");
             durationtext.innerHTML = db.getItem(phrase+"start");
             duration.appendChild(durationtext); 
@@ -113,42 +117,90 @@ function display(){
             var durationtext = document.createElement("span");
             durationtext.innerHTML = db.getItem(phrase+"end");
             duration.appendChild(durationtext); 
-        
+            
+            top_half.appendChild(duration);  
 
+            var done = document.createElement("img");
+            done.id = "done"+i;
+            done.className = "done_image";
+            if(db.getItem(phrase+"completed") === "true"){
+                done.className = "done_image";
+                done.setAttribute('src', 'images/tick.png');
+                done.setAttribute("onclick", "check("+i+",0)");
+            }
+            else{
+                done.className = "notdone_image";
+                done.setAttribute('src', 'images/tick-blank.png');
+                done.setAttribute("onclick", "check("+i+",1)");
+            }
 
-        top_half.appendChild(duration);  
+            var deleteIcon = document.createElement("img");
+            deleteIcon.className = "delete_image";
+            deleteIcon.id = "delete"+i;
+            deleteIcon.setAttribute('src', 'images/trash.png');
+            deleteIcon.setAttribute("onclick", "deleteData("+i+",1)");
 
-        var done = document.createElement("img");
-        done.className = "done_image";
-        if(db.getItem(phrase+"completed") === "true"){
-            done.setAttribute('src', 'images/tick.png');
-            done.setAttribute("onclick", "check("+i+",0)");
+            var edit = document.createElement("div");
+            edit.className = "edit_focus";
+            edit.innerHTML =  "&#x270E; Edit"
+            edit.setAttribute("onclick", "edit("+i+")");
+            edit.id = "edit"+i;
+
+            var check = document.createElement("div");
+            
+            check.className = "clear";
+            bottom_half.appendChild(deleteIcon);
+            bottom_half.appendChild(done);
+            bottom_half.appendChild(edit);
+            bottom_half.appendChild(check);
+            
+            node.appendChild(top_half);  
+            node.appendChild(bottom_half);  
+            document.getElementById("focus_items_list").appendChild(node);     // Append <li> to <ul> with id="myList"
         }
-        else{
-            done.setAttribute('src', 'images/tick-blank.png');
-            done.setAttribute("onclick", "check("+i+",1)");
-        }
-
-        var edit = document.createElement("div");
-        edit.className = "edit_focus";
-        edit.innerHTML =  "&#x270E; Edit"
-        edit.setAttribute("onclick", "edit("+i+")");
-
-        var check = document.createElement("div");
-        
-        check.className = "clear";
-        bottom_half.appendChild(done);
-        bottom_half.appendChild(edit);
-        bottom_half.appendChild(check);
-        
-        node.appendChild(top_half);  
-        node.appendChild(bottom_half);  
-        document.getElementById("focus_items_list").appendChild(node);     // Append <li> to <ul> with id="myList"
-
 
     }
     calculate_completed();
 }
+
+function deleteData(id){
+
+    let numFocusItems = parseInt(db.getItem("numFocus"));
+
+    for (i = id ;i < numFocusItems - 1;i ++) {
+        var phrase = "focus" + id;
+        var phrase2 = "focus" + (id+1);
+        db.setItem(phrase+ 'name', db.getItem(phrase2+"name"));   
+        db.setItem(phrase+'tags',  db.getItem(phrase2+"tags"));   
+        db.setItem(phrase+'duration',  db.getItem(phrase2+"duration"));   
+        db.setItem(phrase+'start',  db.getItem(phrase2+"start"));   
+        db.setItem(phrase+'end',  db.getItem(phrase2+"end"));   
+        db.setItem(phrase+"completed",  db.getItem(phrase2+"completed"));   
+        db.setItem(phrase+"show",  db.getItem(phrase2+"show"));   
+    }
+
+    var all = document.getElementsByClassName("stage-saturn");
+    var phrase = "focus" + (numFocusItems-1);
+
+    for (var i=all.length -1; i > -1; i--) {
+        if(all[i].innerHTML == db.getItem(phrase+"name")){
+            all[i].parentNode.removeChild(all[i]);
+        }
+    }
+    
+    db.removeItem(phrase+ 'name');   
+    db.removeItem(phrase+'tags');
+    db.removeItem(phrase+'duration');
+    db.removeItem(phrase+'start');
+    db.removeItem(phrase+'end');
+    db.removeItem(phrase+"completed");
+    db.removeItem(phrase+"show");
+
+
+    db.setItem("numFocus", String(numFocusItems - 1));
+    display();
+}
+
 
 function check(id,set){
     let isChecked;
@@ -185,7 +237,7 @@ function validateMyForm(){
     console.log("Valid Form:" + ID);
 
     if(inp4 > inp5){
-        alert("Start date cannot be greater than end date.");
+        document.getElementById("warning").innerHTML = "Start date cannot be greater than end date.";
         return false;
     }
     if(isNaN(editID) == false){
@@ -218,6 +270,7 @@ function validateMyForm(){
         db.setItem(phrase+'start', inp4);
         db.setItem(phrase+'end', inp5);
         db.setItem(phrase+"completed", "false");
+        db.setItem(phrase+"show", "true");
     }
     
     /*focus_items[ID]["tag"] = inp2;
