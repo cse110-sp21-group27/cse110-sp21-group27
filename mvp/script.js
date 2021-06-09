@@ -237,7 +237,7 @@ function validateMyForm(){
     console.log("Valid Form:" + ID);
 
     if(inp4 > inp5){
-        document.getElementById("warning").innerHTML = "Start date cannot be greater than end date.";
+        alert("Start date cannot be greater than end date.");
         return false;
     }
     if(isNaN(editID) == false){
