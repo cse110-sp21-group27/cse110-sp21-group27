@@ -296,6 +296,7 @@ function remove_card(card,date,text,image) {
     date.remove();
     image.remove();
     card.remove();
+    storeData();
 }
 
 /*function makeDetails() {
@@ -306,8 +307,6 @@ function remove_card(card,date,text,image) {
 var details = new makeDetails();*/
 
 function handleKeyDown(event,text,details) {
-    console.log("down: " + event.key);
-    console.log(details);
     details["value"] = text.value;
     if (event.key == "Control") {
         details["ctrl"] = true;
@@ -315,8 +314,6 @@ function handleKeyDown(event,text,details) {
 }
 
 function handleKeyUp(event,text,details) {
-    console.log("up: " + event.key);
-    console.log(details);
     if (event.key == "Control") {
         details["ctrl"] = false;
     }
@@ -407,10 +404,6 @@ function add_card() {
     card_container.appendChild(new_card);
     new_text.addEventListener("keydown",(event) => { handleKeyDown(event,new_text,details); });
     new_text.addEventListener("keyup",(event) => { handleKeyUp(event,new_text,details); });
-}
-
-function add(a, b) {
-    return a + b;
 }
   
 
@@ -523,7 +516,7 @@ function storeFocusItem(focusItem,key) {
 function storeCard(card,key) {
     let cardItems = card.childNodes;
     db.setItem(key+"date",cardItems[0].innerHTML);
-    db.setItem(key+"text",cardItems[1].innerHTML);
+    db.setItem(key+"text",cardItems[2].value);
 }
 
 function storeData() {
@@ -536,7 +529,7 @@ document.getElementById("cards_button").addEventListener("change",storeData);
 function loadCard(card,key) {
     let cardItems = card.childNodes;
     cardItems[0].innerHTML = db.getItem(key+"date");
-    cardItems[1].innerHTML = db.getItem(key+"text");
+    cardItems[2].value = db.getItem(key+"text");
 }
 
 function loadData() {
