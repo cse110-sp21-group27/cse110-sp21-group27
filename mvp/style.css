@@ -391,7 +391,7 @@ h2 {
 	
 }
 
-.done_image{
+.done_image, .notdone_image{
 	cursor: pointer;
 	float: right;
 	width: 25px;
@@ -520,3 +520,18 @@ body.settings {
   .stage-jupiter {background-color: #81D4FA}
   .stage-saturn {background-color: #26C6DA}
 /*end of daily view*/
+
+
+#warning{
+	color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.delete_image{
+	cursor: pointer;
+	float: right;
+	width: 25px;
+	padding-right: 10px;
+}
