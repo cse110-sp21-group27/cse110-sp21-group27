@@ -240,6 +240,7 @@ function validateMyForm(){
         document.getElementById("warning").innerHTML = "Start date cannot be greater than end date.";
         return false;
     }
+    document.getElementById("warning").innerHTML = "";
     if(isNaN(editID) == false){
         ID = editID;
         editID = NaN;
