@@ -444,14 +444,14 @@ body.settings #weekly{
 #event_tab{
 	display: none;
 }
-/*
-body #box2{
+
+body #date{
 	display: none;
 }
-body.settings #box2{
+body.settings #date{
 	display: unset;
 }
-*/
+
 body.settings #return{
 	display: unset;
 }
