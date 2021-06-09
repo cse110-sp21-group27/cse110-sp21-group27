@@ -494,6 +494,21 @@ function loadData() {
 
 document.addEventListener("DOMContentLoaded",loadData);
 
+
+
+//Calendar Start
+//Automatically gets current Date. Change date with select Date
+//Changes?? remove 0 from single digit days and months
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+function handler(e){
+    console.log(e.target.value);
+    document.getElementById("datetime").textContent = e.target.value.substring(5,7) + "/" + e.target.value.substring(8) + "/" + e.target.value.substring(0,4);
+  }
+//Calendar End
+
+
+
 document.getElementById('daily_button').addEventListener('click', () => {
     console.log("clicked");
     document.body.classList.add('settings');

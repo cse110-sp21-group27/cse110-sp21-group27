@@ -87,8 +87,13 @@
 
 		<!-- this point is still not on the time grid -->
 		
+		<!--Looks ugly, needs CSS magic-->
+		<!--Start of Date selection-->
 		<h1 id="return">Return</h1>
-        </div></td>
+		<h1 id="date">Date/Time: <span id="datetime"></span></br>
+			Select Date: <input type="date" id="myDate" onchange="handler(event);"></h1>
+        <!--</div></td> Not sure if this is necessary-->
+		<!--End of Date selection-->
 
 		<div id="event_tab">
 			<h1 id="focus_h1">Add Event</h1>
@@ -97,129 +102,213 @@
 			</div>
 		</div>
 
+		<tr>
+			<th>    
+        5:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        5:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        6:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        6:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        7:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        7:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        8:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        8:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        9:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        9:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        10:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        10:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
 		  <tr>
 			<th>    
-        08:00
+        11:00am
       </th>
       
 			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
       </tr>
 		  <tr>
-			<th>08:30</th>
+			<th>11:30am</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>09:00</th>
+			<th>12:00pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>09:30</th>
+			<th>12:30pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>10:00</th>
+			<th>1:00pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>10:30</th>
+			<th>1:30pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>11:00</th>
+			<th>2:00pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>11:30</th>
+			<th>2:30pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>12:00</th>
+			<th>3:00pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>12:30</th>
+			<th>3:30pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>13:00</th>
+			<th>4:00pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>13:30</th>
+			<th>4:30pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>14:00</th>
+			<th>5:00pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>14:30</th>
+			<th>5:30pm</th>
       		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
-			<th>15:00</th>
+			<th>6:00pm</th>
         <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>15:30</th>
+			<th>6:30pm</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>16:00</th>
+			<th>7:00pm</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>16:30</th>
+			<th>7:30pm</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>17:00</th>
+			<th>8:00pm</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>17:30</th>
+			<th>8:30pm</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>18:00</th>
+			<th>9:00pm</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>18:30</th>
+			<th>9:30pm</th>
 			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>19:00</th>
+			<th>10:00pm</th>
 			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>19:30</th>
+			<th>10:30pm</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>20:00</th>
+			<th>11:00pm</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>20:30</th>
+			<th>11:30pm</th>
 			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
-			<th>21:00</th>
+			<th>12:00am</th>
       <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		
