@@ -103,7 +103,7 @@ function display(){
             if(db.getItem(phrase+"duration")){
                 var durationtext = document.createElement("span");
                 durationtext.innerHTML = db.getItem(phrase+"duration");
-                durationtext.innerHTML += " Minutes";
+                //durationtext.innerHTML += " Minutes";
                 duration.appendChild(durationtext); 
                 var durationtext = document.createElement("br");
                 duration.appendChild(durationtext); 
@@ -262,10 +262,12 @@ function validateMyForm(){
 
     }
     else {
+        console.log("VALIDATE " + numFocusItems );
+        console.log("MLAO " + (numFocusItems +1));
         db.setItem("numFocus", String(numFocusItems + 1));
         let phrase = "focus" + ID;
         db.setItem(phrase+ 'name', inp1);   
-        db.setItem(phrase+'tags', inp2);
+        db.setItem(phrase+'tags', inp2); 
         db.setItem(phrase+'duration', inp3);
         db.setItem(phrase+'start', inp4);
         db.setItem(phrase+'end', inp5);
@@ -464,9 +466,11 @@ function focusItemStorage() {
     if(db.getItem('numFocus') === null) {
         db.setItem("numFocus","0");
         display();   
+        
     } 
     else {
         display();
+        
     }
 
     numFocusItems = db.getItem('numFocus');
@@ -566,6 +570,7 @@ document.getElementById('daily_button').addEventListener('click', () => {
     console.log("clicked");
     document.body.classList.add('settings');
     var head = document.getElementById("return");
+    document.querySelector("h1").style = "display: block;"
 
     
 
@@ -573,7 +578,7 @@ document.getElementById('daily_button').addEventListener('click', () => {
     let wrapper = document.querySelector(".dailyFocus");
 
     
-    wrapper.innerHTML = "<td colspan='4' rowspan='1' <div id='box' ondrop='drop(event)' ondragover='allowDrop(event)'></div></td>";
+    wrapper.innerHTML = "<td colspan='4' rowspan='1' <div style ='width: 80%;'id='box' ondrop='drop(event)' ondragover='allowDrop(event)'></div></td>";
     for(let i = 0; i < numFocusItems; i++ ) {
         let drag = document.createElement("td");
         drag.id = "drag"+i;
@@ -604,6 +609,7 @@ document.getElementById('daily_button').addEventListener('click', () => {
     //document.body.appendChild(y);
     head.addEventListener("click", () => {
         document.body.classList.remove('settings');
+        document.querySelector("h1").style = "display: none;"
         //head.remove();
         //x.remove();
         //y.remove();

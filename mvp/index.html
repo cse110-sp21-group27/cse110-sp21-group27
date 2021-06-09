@@ -75,6 +75,7 @@
 </head>
 
 <body>
+	<h1 style="display: none;">Drag Focus Items to the time-slot of your desire!</h1>
 	<table class="dailyFocus">
 
 	
@@ -89,15 +90,15 @@
 		
 		<!--Looks ugly, needs CSS magic-->
 		<!--Start of Date selection-->
-		<h1 id="return">Return</h1>
+		<h1 id="return" style="border:solid; border-radius: 2em; padding:1em;">Return to HomePage</h1>
 		<h1 id="date">Date/Time: <span id="datetime"></span></br>
 			Select Date: <input type="date" id="myDate" onchange="handler(event);"></h1>
         <!--</div></td> Not sure if this is necessary-->
 		<!--End of Date selection-->
 
 		<div id="event_tab">
-			<h1 id="focus_h1">Add Event</h1>
-			<button id="focus_button">Add New Focus Item <span onclick="add_new_focus()">&oplus;</span></button>
+			<!--<h1 id="focus_h1">Add Event</h1>
+			<button id="focus_button">Add New Focus Item <span onclick="add_new_focus()">&oplus;</span></button>-->
 			
 			</div>
 		</div>
