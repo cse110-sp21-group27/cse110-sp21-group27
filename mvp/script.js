@@ -234,24 +234,123 @@ function validateMyForm(){
   
 }
 
+function remove_card(card,date,text,image) {
+    text.remove();
+    date.remove();
+    image.remove();
+    card.remove();
+}
+
+/*function makeDetails() {
+    this.value = "Enter Text";
+    this.ctrl = false;
+}
+
+var details = new makeDetails();*/
+
+function handleKeyDown(event,text,details) {
+    console.log("down: " + event.key);
+    console.log(details);
+    details["value"] = text.value;
+    if (event.key == "Control") {
+        details["ctrl"] = true;
+    }
+}
+
+function handleKeyUp(event,text,details) {
+    console.log("up: " + event.key);
+    console.log(details);
+    if (event.key == "Control") {
+        details["ctrl"] = false;
+    }
+    if (details["ctrl"]) {
+        if (event.key == ";") {
+            details["value"] += "• ";
+            text.value = details["value"];
+        }
+        if (event.key == "'") {
+            details["value"] += "⁃ ";
+            text.value = details["value"];
+        }
+        if (event.key == "/") {
+            details["value"] += "‣ ";
+            text.value = details["value"];
+        }
+    }
+}
+
+/* 
+
+// Function to change webpage background color
+function changeBodyBg(color){
+    document.querySelector("textarea").style.background = color;
+    var elem = document.getElementById("cards_list").childNodes[1];
+    elem.style.background = color;
+}
+
+*/
+
+/*
+ //yellow color button
+    let yellow_button = document.createElement("button");
+    yellow_button.innerHTML = "Yellow";
+    new_card.append(yellow_button);
+    yellow_button.addEventListener('click', () => {
+        changeBodyBg("yellow");
+
+    });
+
+    //green color button
+    let green_button = document.createElement("button");
+    green_button.innerHTML = "Green";
+    new_card.append(green_button);
+    green_button.addEventListener('click', () => {
+        changeBodyBg("green");
+    });
+    //blue color button
+    let blue_button = document.createElement("button");
+    blue_button.innerHTML = "Blue";
+    new_card.append(blue_button);
+    blue_button.addEventListener('click', () => {
+        changeBodyBg("blue");
+    });
+    //white color button
+    let white_button = document.createElement("button");
+    white_button.innerHTML = "White";
+    new_card.append(white_button);
+    white_button.addEventListener('click', () => {
+        changeBodyBg("white");
+    });
+
+    */
+
+
+
+
+
 function add_card() {
     let new_card = document.createElement("div");
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
+    let cross_img = document.createElement("img");
     let d = new Date();
+    var details = { value: "Enter Text", ctrl: false };
     new_date.innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
-    new_text.innerHTML = "Enter Text";
-    new_card.classList.add("card"+cardsId);
-    cardsId++;
+    new_text.value = "Enter Text";
+    cross_img.src = "./images/cross-icon.png";
+    cross_img.alt = "X";
+    cross_img.addEventListener("click",() => { remove_card(new_card,new_date,new_text,cross_img); });
     new_card.appendChild(new_date);
+    new_card.appendChild(cross_img);
     new_card.appendChild(new_text);
     new_card.addEventListener("change",storeData);
     new_date.addEventListener("change",storeData);
     new_text.addEventListener("change",storeData);
     let card_container = document.getElementById("cards_list");
     card_container.appendChild(new_card);
+    new_text.addEventListener("keydown",(event) => { handleKeyDown(event,new_text,details); });
+    new_text.addEventListener("keyup",(event) => { handleKeyUp(event,new_text,details); });
 }
-
 
 function add(a, b) {
     return a + b;
@@ -406,10 +505,10 @@ document.getElementById('daily_button').addEventListener('click', () => {
     let wrapper = document.querySelector(".dailyFocus");
 
     
-    wrapper.innerHTML = "";
+    wrapper.innerHTML = "<td colspan='4' rowspan='1' <div id='box' ondrop='drop(event)' ondragover='allowDrop(event)'></div></td>";
     for(let i = 0; i < numFocusItems; i++ ) {
         let drag = document.createElement("td");
-        drag.id = "drag";
+        drag.id = "drag"+i;
         drag.draggable = "true";
         drag.addEventListener("dragstart", function(event){
             event.dataTransfer.setData("text", event.target.id);
