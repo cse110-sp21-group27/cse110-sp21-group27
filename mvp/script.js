@@ -579,7 +579,9 @@ function storeFocusItem(focusItem,key) {
 function storeCard(card,key) {
     let cardItems = card.childNodes;
     db.setItem(key+"date",cardItems[0].innerHTML);
-    db.setItem(key+"text",cardItems[2].value);
+    db.setItem(key+"nodecolor",card.style.background);
+    db.setItem(key+"childcolor",cardItems[1].style.background);
+    db.setItem(key+"text",cardItems[3].value);
 }
 
 function storeData() {
@@ -592,7 +594,9 @@ document.getElementById("cards_button").addEventListener("change",storeData);
 function loadCard(card,key) {
     let cardItems = card.childNodes;
     cardItems[0].innerHTML = db.getItem(key+"date");
-    cardItems[2].value = db.getItem(key+"text");
+    card.style.background = db.getItem(key+"nodecolor");
+    cardItems[1].style.background = db.getItem(key+"childcolor");
+    cardItems[3].value = db.getItem(key+"text");
 }
 
 function loadData() {
