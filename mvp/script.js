@@ -118,7 +118,7 @@ function display(){
             if(db.getItem(phrase+"duration")){
                 var durationtext = document.createElement("span");
                 durationtext.innerHTML = db.getItem(phrase+"duration");
-                //durationtext.innerHTML += " Minutes";
+                durationtext.innerHTML = " Minutes";
                 duration.appendChild(durationtext); 
                 var durationtext = document.createElement("br");
                 duration.appendChild(durationtext); 
