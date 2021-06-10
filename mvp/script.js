@@ -702,6 +702,19 @@ document.getElementById('daily_button').addEventListener('click', () => {
     head.addEventListener("click", () => {
         document.body.classList.remove('settings');
         document.querySelector("h1").style = "display: none;"
+
+        let allTimes = document.querySelectorAll("#box");
+    for(let i=0; i<allTimes.length; i++) {
+        
+        let items = allTimes[i].childNodes;
+        console.log(items)
+        for(let j=0; j<items.length; j++) {
+            
+            console.log(items[j]);
+            allTimes[i].removeChild(items[j]);
+            // document.querySelectorAll("#box")[1].removeChild(document.querySelectorAll("#box")[1].firstChild)
+        }
+    }
         //head.remove();
         //x.remove();
         //y.remove();
