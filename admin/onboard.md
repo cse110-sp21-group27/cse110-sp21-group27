@@ -42,7 +42,7 @@ Our internal team docs resides in the [./admin](../admin) directory. There you w
 
 - [Meeting Minutes](meetings)
 
-- [Individual Member Responsibilies](misc/rules.md)
+- [Individual Member Responsibilies](misc)
 
 - [Team Background](team.md)
 
