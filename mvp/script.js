@@ -563,13 +563,25 @@ function loadData() {
 
 document.addEventListener("DOMContentLoaded",loadData);
 
-
+function addDateZeroes(datePrint) {
+    if (datePrint.indexOf("/") == 1) {
+        datePrint = "0" + datePrint;
+    }
+    let dateStart = datePrint.substring(0,3);
+    let dateEnd = datePrint.substring(3);
+    if (dateEnd.indexOf("/") == 1) {
+        dateEnd = "0" + dateEnd;
+    }
+    return dateStart + dateEnd;
+}
 
 //Calendar Start
 //Automatically gets current Date. Change date with select Date
 //Changes?? remove 0 from single digit days and months
 var dt = new Date();
-document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+document.getElementById("datetime").innerHTML = addDateZeroes(dt.toLocaleDateString());
+//6/9/2021 what we get
+//06/09/2021 what we want
 function handler(e){
     console.log(e.target.value);
     document.getElementById("datetime").textContent = e.target.value.substring(5,7) + "/" + e.target.value.substring(8) + "/" + e.target.value.substring(0,4);
