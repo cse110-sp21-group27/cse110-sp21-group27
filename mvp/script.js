@@ -118,8 +118,12 @@ function display(){
             if(db.getItem(phrase+"duration")){
                 var durationtext = document.createElement("span");
                 durationtext.innerHTML = db.getItem(phrase+"duration");
-                //durationtext.innerHTML += " Minutes";
+                durationtext.innerHTML += " Minute";
+                if(db.getItem(phrase+"duration") > 1){
+                    durationtext.innerHTML += "s";
+                }
                 duration.appendChild(durationtext); 
+                durationtext.id = "minutes"+i
                 var durationtext = document.createElement("br");
                 duration.appendChild(durationtext); 
             }
@@ -404,6 +408,7 @@ function changeCardColor(node,color){
 
 function add_card(toStore=true) {
     let new_card = document.createElement("div");
+    new_card.className = "card_item"
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
     let cross_img = document.createElement("img");
@@ -442,6 +447,7 @@ function add_card(toStore=true) {
     let Gold = document.createElement("option");
     Gold.id = "option-4";
     Gold.textContent = "Gold";
+    Gold.value = "Gold";
     color.appendChild(Gold);
 
     let BlueViolet = document.createElement("option");
@@ -548,7 +554,7 @@ function storeFocusItem(focusItem,key) {
     let checkImg = focusItem.childNodes[1].childNodes[0];
     db.setItem(key+"name",gridItems[1].childNodes[0].innerHTML);
     db.setItem(key+"tags", gridItems[1].childNodes[1].innerHTML);
-    db.setItem(key+"duration", gridItems[2].childNodes[0].innerHTML);
+    db.setItem(key+"duration", gridItems[2].childNodes[0].innerHTML.split(" ")[0]);
     db.setItem(key+"start", gridItems[2].childNodes[2].innerHTML);
     db.setItem(key+"end", gridItems[2].childNodes[4].innerHTML);
     if(checkImg.src === "http://127.0.0.1:5502/mvp/images/tick.png") {
