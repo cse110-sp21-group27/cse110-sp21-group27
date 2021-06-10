@@ -12,7 +12,7 @@ The Bullet Journal is a CRUD application that will encourage its users to adopt 
 The Bullet Journal is a personalized aid to keep track of commitments, classes, events, and remember important information.
 
 ## CI/CD Pipline Information
-- You can find out more about how the [continuous integration](./admin/cipipline) works within our codebase! 
+- You can find out more about how the [continuous integration](./admin/cipipeline) works within our codebase! 
 
 ## User-End Documentation
 - Here is a link to learn how to [use](./docs/Users%20Story%20Document.pdf) our Bullet Journal App!
