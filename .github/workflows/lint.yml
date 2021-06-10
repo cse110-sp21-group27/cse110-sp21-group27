@@ -25,3 +25,9 @@ jobs:
       - name: Run ESLint
         working-directory: ./source
         run: npx eslint "./*.js"
+        
+      - name: Babel
+        working-directory: ./source
+        run: npm install babel-cli babel-core --save-dev
+
+        
