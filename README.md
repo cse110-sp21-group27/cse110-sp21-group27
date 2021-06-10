@@ -34,7 +34,7 @@ The Bullet Journal is a personalized aid to keep track of commitments, classes, 
 
 ## Administration
 - Here are the [meeting notes.](./admin/meetings)
-- Here are the [Daily Standups.](./admin/daily)
+- Here are the [Daily Standups.](./admin/dailyStandups)
 - Here is the [team contract.](./admin/misc)
 - Here are all the [videos](./admin/videos) for this quarter.
 
