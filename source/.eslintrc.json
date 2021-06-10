@@ -1,4 +1,6 @@
 {
+    "parser": "babel-eslint", //fixes unexpected token
+    
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "double"]
