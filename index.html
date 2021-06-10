@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>MVP Team 27</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		#box {
+		  width: 470px;
+		  height: 14px;
+		  border: 1px solid #aaaaaa;
+		  position: static;
+		  left: 33%;
+		}
+
+		#box2 {
+		  width: 670px;
+		  height: 104px;
+		  border: 1px solid #aaaaaa;
+		  position: static;
+		  left: 33%;
+		}
+	  
+		 .element {
+		  width: 470px;
+		  border: 1px solid #aaaaaa;
+		}
+	  
+		   #element2 {
+		  width: 470px;
+		  border: 1px solid #aaaaaa;
+		}
+	  
+		</style>
+		
+		<!--drag and drop function -->
+		<script>
+	  
+	  // Intentions to keep focus items continously draggable to multiple boxes.
+	  // Currently focus item is a one time drag and drop action 
+	  
+	  
+		function allowDrop(ev) {
+		  ev.preventDefault();
+		}
+	  
+		function drag(ev) {
+		  ev.dataTransfer.setData("text", ev.target.id);
+		  
+		}
+	  
+		function drop(ev) {
+		  ev.preventDefault();
+		  var data = ev.dataTransfer.getData("text");
+		  
+		  if(ev.target.id == "box"){
+			  
+			  console.log(ev);
+			  console.log(ev.target);
+			  console.log(data);
+			  console.log(document.getElementById(data));
+			  
+			ev.target.appendChild(document.getElementById(data));
+			let currDate = document.getElementById("datetime").innerHTML;
+			let phrase = currDate + data;
+			window.localStorage.setItem(phrase, ev.target.classList[0]);
+		  
+		  }else{
+			//console.log(ev.target.parentElement)
+			ev.target.parentElement.appendChild(document.getElementById(data));
+			let currDate = document.getElementById("datetime").innerHTML;
+			let phrase = currDate + data;
+			window.localStorage.setItem(phrase, ev.target.parentElement.classList[0]);
+
+			//document.getElementById("box").appendChild(document.getElementById(data));
+		  }
+		  // this is causing tasks to appear nested visually
+		  //change target to be box
+		}
+
+		</script>
+</head>
+
+<body>
+	<h1 style="display: none;">Drag Focus Items to the time-slot of your desire!</h1>
+	<table class="dailyFocus">
+	
+	</table>
+	<!--Start of Daily View-->
+	<table class = "img-background">
+		<!--
+		<td colspan="4" rowspan="1" <div id="box2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		-->
+
+		<!-- this point is still not on the time grid -->
+		
+		<!--Looks ugly, needs CSS magic-->
+		<!--Start of Date selection-->
+		<h1 id="return" style="border:solid; border-radius: 2em; padding:1em;">Return to HomePage</h1>
+		<h1 id="date">Date/Time: <span id="datetime"></span></br>
+			Select Date: <input type="date" id="myDate" onchange="handler(event);"></h1>
+        <!--</div></td> Not sure if this is necessary-->
+		<!--End of Date selection-->
+
+		<div id="event_tab">
+			<!--<h1 id="focus_h1">Add Event</h1>
+			<button id="focus_button">Add New Focus Item <span onclick="add_new_focus()">&oplus;</span></button>-->
+			
+			</div>
+		</div>
+
+		<tr>
+			<th>    
+        5:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="5:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        5:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="5:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        6:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="6:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        6:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="6:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        7:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="7:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        7:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="7:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        8:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="8:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        8:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="8:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        9:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="9:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        9:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="9:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        10:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="10:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		<tr>
+			<th>    
+        10:30am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="10:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  <tr>
+			<th>    
+        11:00am
+      </th>
+      
+			<td colspan="4" rowspan="1" <div id="box" class="11:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+      </tr>
+		  <tr>
+			<th>11:30am</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="11:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>12:00pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="12:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>12:30pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="12:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>1:00pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="1:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>1:30pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="1:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>2:00pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="2:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>2:30pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="2:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>3:00pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="3:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>3:30pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="3:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>4:00pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="4:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>4:30pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="4:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>5:00pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="5:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>5:30pm</th>
+      		<td colspan="4" rowspan="1" <div id="box" class="5:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div></td>
+		  </tr>
+		  <tr>
+			<th>6:00pm</th>
+        <td colspan="4" rowspan="1" <div id="box" class="6:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>6:30pm</th>
+      <td colspan="4" rowspan="1" <div id="box" class="6:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>7:00pm</th>
+      <td colspan="4" rowspan="1" <div id="box" class="7:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>7:30pm</th>
+      <td colspan="4" rowspan="1" <div id="box" class="7:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>8:00pm</th>
+      <td colspan="4" rowspan="1" <div id="box" class="8:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>8:30pm</th>
+      <td colspan="4" rowspan="1" <div id="box" class="8:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>9:00pm</th>
+      <td colspan="4" rowspan="1" <div id="box" class="9:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>9:30pm</th>
+			<td colspan="4" rowspan="1" <div id="box" class="9:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>10:00pm</th>
+			<td colspan="4" rowspan="1" <div id="box" class="10:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>10:30pm</th>
+      <td colspan="4" rowspan="1" <div id="box" class="10:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>11:00pm</th>
+      <td colspan="4" rowspan="1" <div id="box" class="11:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>11:30pm</th>
+			<td colspan="4" rowspan="1" <div id="box" class="11:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		  <tr>
+			<th>12:00am</th>
+      <td colspan="4" rowspan="1" <div id="box" class="12:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  </tr>
+		
+	  </table>
+	
+	<script type="text/javascript">
+	/*(function() {
+	
+	var img = document.getElementById('schedule_view_tab').childNodes[0];
+	img.onload = function() {
+		if(img.height > img.width) {
+			img.height = '100%';
+			img.width = 'auto';
+		}
+	};
+	
+	}());*/
+	</script>
+
+
+
+	<div id="main_page">
+		<div id="schedule_view_tab">
+			<h1 id="schedule_h1">Schedule View</h1>
+			<button id="daily_button">Daily View</button>
+			<img id = "Logo" src = "images/Logo.png">
+		</div>
+
+		<div id="focus_items_tab">
+			<h1 id="focus_h1">Focus Items</h1>
+			<button id="focus_button" onclick="add_new_focus()">Add New Focus Item</button>
+			
+			<div id="focus_completed" >
+				<div>
+					<span class="focus_completed_left">
+						<img src="images/checkbox.png"/>
+					</span>
+					<span class="focus_completed_right">
+						Focus Items Completed
+					</span>
+					<div class="clear"></div>
+				</div>
+				<h2 id="focus_completed_number">0</h2>
+			</div>
+			
+			<h2 id="focus_h2">Current Focus Items</h2>
+			<div id="focus_items_list">
+				
+				
+			</div>
+		</div>
+
+		<div id="cards_tab">
+			<h1 id="focus_h1">Cards</h1>
+			<button id="cards_button" onclick="add_card()">Add a Card</button>
+			<div id="cards_list" style="overflow:auto; height:650px;"></div>
+		</div>
+	</div>
+
+	<div id="focus_modal" class="modal-window">
+		<div id="focus_modal_content">
+			<div id="focus_header">
+				<span id="focus_modal_cancel" onclick="close_modal()">&laquo;</span>
+				<span id="focus_modal_header">Create Focus Item</span>
+				<div class="clear"></div>
+			</div>
+
+			<form id="focus_form" onsubmit="event.preventDefault(); validateMyForm();">
+				<div id="warning"></div>
+
+				<div>
+					<label>Name</label><br>
+					<input id="inp1" class="focus_input" name="name" placeholder="Insert Name Here" required="required">
+				</div>
+
+				<div>
+					<label>Tags</label><br>
+					<select  id="inp2" class="focus_input" name="tag"  required="required">
+						<option value="Health">Health</option>
+						<option value="Academics">Academics</option>
+						<option value="Personal">Personal</option>
+						<option value="Urgent">Urgent</option>
+						<option value="Financials">Financials</option>
+						<option value="Work">Work</option>
+						<option value="Family">Family</option>
+						<option value="Cleaning">Cleaning</option>
+					</select>
+				</div>
+
+				<div>
+					<label>Duration (minutes)</label><br>
+					<input type="number" id="inp3" class="focus_input" name="duration" placeholder="In Minutes" value="0" min="0" oninput="validity.valid||(value='');">
+					
+				</div>
+<!-- fix the date period problem -->
+				<div>
+					<label for="startCalendar">Start:</label><br>
+					<input type="date" class="focus_input" id="startCalendar" placeholder="" name="startCalendar" required><br>
+
+				</div>
+
+				<div>
+					<label for="endCalendar">End:</label><br>
+					<input type="date" class="focus_input" id="endCalendar" placeholder="" name="endCalendar" required>
+				</div>
+
+
+				
+				<input type="submit" value="Create" id="focus_item_create">
+			</form>
+			
+
+		</div>
+
+	</div>
+	<script src="script.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			document.getElementById("focus_modal").style.display = "none";
+			focusItemStorage();
+			
+		});
+		
+
+		
+	</script>
+	
+</body>
