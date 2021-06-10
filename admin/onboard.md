@@ -22,6 +22,10 @@ and should take a bit to complete their checks. Once all three have passed, link
 Otherwise, close the pull request and make the necessary changes to get passing marks. 
 
 
+## Deploying the App . . . 
+
+We use the Heroku App to deploy our Bullet Journal. You will find that it is based within the Heroku branch via the index.php file.
+
 
 
 ## Testing Code . . . 
