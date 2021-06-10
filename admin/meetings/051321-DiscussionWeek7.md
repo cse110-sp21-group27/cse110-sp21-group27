@@ -4,7 +4,7 @@
 Discussion Week 7
 ```
 ### *Date, time & location & writer:*
-**Date:** `2021-05-1`
+**Date:** `2021-05-13`
 **Start Time:** `5:30 PM`
 **End Time:** `6:40 PM`
 **Platform:** `Zoom / Figma`

@@ -4,7 +4,7 @@
 ADR + Feedback driven Design
 ```
 ### *Date, time & location & writer:*
-**Date:** `2021-05-1`
+**Date:** `2021-05-13`
 **Start Time:** `3:30 PM`
 **End Time:** `5:00 PM`
 **Platform:** `Zoom / Figma`
