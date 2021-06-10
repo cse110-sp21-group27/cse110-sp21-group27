@@ -1,34 +1,10 @@
-
-
 var db = window.localStorage;
-
 var focus_items = []; 
 var itemsID = 0;
 var editID = NaN;
 var cardsId = 0;
-/*
-db.getItem('numFocus')  returns total number of focus items stored
-db.getItem('focus0name');   everything else is a string
-db.getItem('focus0tags');
-db.getItem('focus0duration');
-db.getItem('focus0start');
-db.getItem('focus0end');
-db.getItem('focus0completed'); returns true or false
 
-
-
-*/
 focus_items[0] = [];
-// Default Display
-/*focus_items[0]["id"] = itemsID;
-focus_items[0]["completed"] =1;
-focus_items[0]["tag"] ="Work";
-focus_items[0]["name"] ="UI Design";
-focus_items[0]["duration"] ="40";
-focus_items[0]["start"] ="2021-05-12";
-focus_items[0]["end"] ="2021-05-13";
-itemsID++;*/
-
 
 function add_new_focus() {
     editID = NaN;
@@ -42,7 +18,6 @@ function close_modal(){
     document.getElementById("focus_modal").style.display = "none";
     document.getElementById("warning").innerHTML = "";
 }
-
 
 function calculate_completed(){
     var count = 0;
@@ -60,8 +35,6 @@ function calculate_completed(){
 function display(){
     document.getElementById("focus_items_list").innerHTML = "";
     let numFocusItems = db.getItem('numFocus');
-    //console.log(db.getItem('numFocus'));
-    console.log("Display focus Items:"+numFocusItems);
     for (i = 0 ;i < numFocusItems ;i ++) {
         let phrase = "focus" + i;
         if(db.getItem(phrase+"show") === "true"){
@@ -79,7 +52,6 @@ function display(){
             details.className = "grid-item-2";  
             duration.className = "grid-item-3";
             var img = document.createElement("img");  
-            //img.setAttribute('src', 'images/goal.png');
             img.setAttribute('width', '50px');
             img_div.appendChild(img);
             top_half.className = "focus_single_item_inner";
@@ -96,7 +68,6 @@ function display(){
             tag.className = "focus_tag";
             
             //Emoji system
-            //console.log(tag.innerHTML); //prints the tag name
             var tag_emoji = {
                 "Health" : 'images/medical.png',
                 "Academics" : 'images/academics.png',
@@ -106,7 +77,7 @@ function display(){
                 "Work" : 'images/work.png',
                 "Family" : 'images/family.png',
                 "Cleaning" : 'images/clean.png'
-            }
+            };
             img.setAttribute('src', tag_emoji[tag.innerHTML]);
             
             details.appendChild(name);
@@ -123,7 +94,7 @@ function display(){
                     durationtext.innerHTML += "s";
                 }
                 duration.appendChild(durationtext); 
-                durationtext.id = "minutes"+i
+                durationtext.id = "minutes"+i;
                 var durationtext = document.createElement("br");
                 duration.appendChild(durationtext); 
             }
@@ -161,7 +132,7 @@ function display(){
 
             var edit = document.createElement("div");
             edit.className = "edit_focus";
-            edit.innerHTML =  "&#x270E; Edit"
+            edit.innerHTML =  "&#x270E; Edit";
             edit.setAttribute("onclick", "edit("+i+")");
             edit.id = "edit"+i;
 
@@ -177,13 +148,11 @@ function display(){
             node.appendChild(bottom_half);  
             document.getElementById("focus_items_list").appendChild(node);     // Append <li> to <ul> with id="myList"
         }
-
     }
     calculate_completed();
 }
 
 function deleteData(id){
-
     let numFocusItems = parseInt(db.getItem("numFocus"));
 
     for (i = id ;i < numFocusItems - 1;i ++) {
@@ -215,11 +184,9 @@ function deleteData(id){
     db.removeItem(phrase+"completed");
     db.removeItem(phrase+"show");
 
-
     db.setItem("numFocus", String(numFocusItems - 1));
     display();
 }
-
 
 function check(id,set){
     let isChecked;
@@ -244,16 +211,13 @@ function edit(id){
     document.getElementById("endCalendar").value = db.getItem(phrase + "end");
 }
 
-
 function validateMyForm(){
-  
     var inp1 = document.getElementById("inp1").value;
     var inp2 = document.getElementById("inp2").value;
     var inp3 = parseInt(document.getElementById("inp3").value);
     var inp4 = document.getElementById("startCalendar").value;
     var inp5 = document.getElementById("endCalendar").value;
     var ID= parseInt(db.getItem('numFocus'));
-    console.log("Valid Form:" + ID);
 
     if(inp4 > inp5){
         document.getElementById("warning").innerHTML = "Start date cannot be greater than end date.";
@@ -265,8 +229,6 @@ function validateMyForm(){
         editID = NaN;
     }
     else{
-        /*focus_items[ID] = [];
-        focus_items[ID]["id"] = itemsID;*/
         itemsID++;
     }
 
@@ -282,8 +244,6 @@ function validateMyForm(){
 
     }
     else {
-        console.log("VALIDATE " + numFocusItems );
-        console.log("MLAO " + (numFocusItems +1));
         db.setItem("numFocus", String(numFocusItems + 1));
         let phrase = "focus" + ID;
         db.setItem(phrase+ 'name', inp1);   
@@ -294,19 +254,11 @@ function validateMyForm(){
         db.setItem(phrase+"completed", "false");
         db.setItem(phrase+"show", "true");
     }
-    
-    /*focus_items[ID]["tag"] = inp2;
-    focus_items[ID]["name"] = inp1;
-    focus_items[ID]["duration"] = inp3;
-    focus_items[ID]["start"] = inp4;
-    focus_items[ID]["end"] = inp5;*/
 
     close_modal();
     display();
 
-    return false;
-
-  
+    return false;  
 }
 
 function remove_card(card,date,text,image) {
@@ -316,13 +268,6 @@ function remove_card(card,date,text,image) {
     card.remove();
     storeData();
 }
-
-/*function makeDetails() {
-    this.value = "Enter Text";
-    this.ctrl = false;
-}
-
-var details = new makeDetails();*/
 
 function handleKeyDown(event,text,details) {
     details["value"] = text.value;
@@ -351,64 +296,14 @@ function handleKeyUp(event,text,details) {
     }
 }
 
-/* 
-
-// Function to change webpage background color
-function changeBodyBg(color){
-    document.querySelector("textarea").style.background = color;
-    var elem = document.getElementById("cards_list").childNodes[1];
-    elem.style.background = color;
-}
-
-*/
-
-/*
- //yellow color button
-    let yellow_button = document.createElement("button");
-    yellow_button.innerHTML = "Yellow";
-    new_card.append(yellow_button);
-    yellow_button.addEventListener('click', () => {
-        changeBodyBg("yellow");
-
-    });
-
-    //green color button
-    let green_button = document.createElement("button");
-    green_button.innerHTML = "Green";
-    new_card.append(green_button);
-    green_button.addEventListener('click', () => {
-        changeBodyBg("green");
-    });
-    //blue color button
-    let blue_button = document.createElement("button");
-    blue_button.innerHTML = "Blue";
-    new_card.append(blue_button);
-    blue_button.addEventListener('click', () => {
-        changeBodyBg("blue");
-    });
-    //white color button
-    let white_button = document.createElement("button");
-    white_button.innerHTML = "White";
-    new_card.append(white_button);
-    white_button.addEventListener('click', () => {
-        changeBodyBg("white");
-    });
-
-    */
-
-
-
 function changeCardColor(node,color){
-    // document.querySelector("textarea").style.background = color;
-    // var elem = document.getElementById("cards_list").childNodes[1];
-    // elem.style.background = color;
     node.style.background = color;
     node.childNodes[1].style.background = color;
 }
 
 function add_card(toStore=true) {
     let new_card = document.createElement("div");
-    new_card.className = "card_item"
+    new_card.className = "card_item";
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
     let cross_img = document.createElement("img");
@@ -443,7 +338,6 @@ function add_card(toStore=true) {
     LightSkyBlue.textContent = "LightSkyBlue";
     color.appendChild(LightSkyBlue);
 
-
     let Gold = document.createElement("option");
     Gold.id = "option-4";
     Gold.textContent = "Gold";
@@ -470,78 +364,24 @@ function add_card(toStore=true) {
     }
     //help change color of cards
     color.addEventListener('change', (event) => {
-        //console.log(event.target.parentNode);
         changeCardColor(event.target.parentNode, event.target.value);
     });
 }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function focusItemStorage() {
-    //focusItems = document.getElementsByClassName("focus_single_item");
     let numFocusItems;
     
     if(db.getItem('numFocus') === null) {
         db.setItem("numFocus","0");
-        display();   
-        
+        display();      
     } 
     else {
         display();
-        
     }
 
     numFocusItems = db.getItem('numFocus');
     let focusItemsArray = document.getElementsByClassName("focus_single_item");
     
-   
-    console.log("db storage:" + db.getItem('numFocus'));
     for (let i = 0; i < numFocusItems; i++) {
         var key = "focus" + i;
         storeFocusItem(focusItemsArray[i],key);
@@ -564,13 +404,9 @@ function storeFocusItem(focusItem,key) {
         db.setItem(key+"completed","false");
     }
     else {
-        console.log(checkImg.src);
         db.setItem(key+"completed","error");
     }
-   
 }
-
-
 
  function cardStorage() {
     let cardsArray = document.querySelectorAll("#cards_list > div");
@@ -633,27 +469,17 @@ function addDateZeroes(datePrint) {
 
 //Calendar Start
 //Automatically gets current Date. Change date with select Date
-//Changes?? remove 0 from single digit days and months
 var dt = new Date();
 document.getElementById("datetime").innerHTML = addDateZeroes(dt.toLocaleDateString());
-//6/9/2021 what we get
-//06/09/2021 what we want
 function handler(e){
-    console.log(e.target.value);
     document.getElementById("datetime").textContent = e.target.value.substring(5,7) + "/" + e.target.value.substring(8) + "/" + e.target.value.substring(0,4);
     let numFocusItems = db.getItem("numFocus");
     let wrapper = document.querySelector(".dailyFocus");
-
     let allTimes = document.querySelectorAll("#box");
     for(let i=0; i<allTimes.length; i++) {
-        
         let items = allTimes[i].childNodes;
-        console.log(items)
         for(let j=0; j<items.length; j++) {
-            
-            console.log(items[j]);
             allTimes[i].removeChild(items[j]);
-            // document.querySelectorAll("#box")[1].removeChild(document.querySelectorAll("#box")[1].firstChild)
         }
     }
 
@@ -680,23 +506,15 @@ function handler(e){
   }
 //Calendar End
 
-
-
-
-
 function populateDailyView() {
     
     let currDate = document.getElementById("datetime").innerHTML;
-    console.log(currDate);
     for(i = 0; i < db.getItem("numFocus"); i++) {
         let ID = "drag"+i;
         let phrase = currDate + ID;
-        console.log(phrase);
         if(db.getItem(phrase) === null) { continue;}
         else{
-           
             let box = db.getItem(phrase);
-            console.log(box);
             let focusItem = document.getElementById(ID);
             //.class = "9:00am" <- Example of format
             document.getElementsByClassName(box)[0].appendChild(focusItem);
@@ -704,26 +522,14 @@ function populateDailyView() {
     }
 }
 
-
-
-
-
-
-
-
 document.getElementById('daily_button').addEventListener('click', () => {
-    console.log("clicked");
     document.body.classList.add('settings');
     var head = document.getElementById("return");
-    document.querySelector("h1").style = "display: block;"
-
-
-    
+    document.querySelector("h1").style = "display: block;";
 
     let numFocusItems = db.getItem("numFocus");
     let wrapper = document.querySelector(".dailyFocus");
 
-    
     wrapper.innerHTML = "<td colspan='4' rowspan='1' <div style ='width: 80%;'id='box' class='start' ondrop='drop(event)' ondragover='allowDrop(event)'></div></td>";
     for(let i = 0; i < numFocusItems; i++ ) {
         let drag = document.createElement("td");
@@ -739,40 +545,19 @@ document.getElementById('daily_button').addEventListener('click', () => {
         let phrase = "focus" + i + "name";
         drag.innerHTML = db.getItem(phrase);
         wrapper.appendChild(drag);
-
     }
 
     populateDailyView();
 
-    
-    
-
-    //head.innerHTML = "May 23, 2021 ;-;";
-    //document.body.appendChild(head);
-    //var x = document.createElement("INPUT");
-    //x.setAttribute("type", "date");
-    //var y = document.createElement("INPUT");
-    //y.setAttribute("type", "text");
-    //document.body.appendChild(x);
-    //document.body.appendChild(y);
     head.addEventListener("click", () => {
         document.body.classList.remove('settings');
-        document.querySelector("h1").style = "display: none;"
-
+        document.querySelector("h1").style = "display: none;";
         let allTimes = document.querySelectorAll("#box");
-    for(let i=0; i<allTimes.length; i++) {
-        
-        let items = allTimes[i].childNodes;
-        console.log(items)
-        for(let j=0; j<items.length; j++) {
-            
-            console.log(items[j]);
-            allTimes[i].removeChild(items[j]);
-            // document.querySelectorAll("#box")[1].removeChild(document.querySelectorAll("#box")[1].firstChild)
+        for(let i=0; i<allTimes.length; i++) {
+            let items = allTimes[i].childNodes;
+            for(let j=0; j<items.length; j++) {
+                allTimes[i].removeChild(items[j]);
+            }
         }
-    }
-        //head.remove();
-        //x.remove();
-        //y.remove();
     });
 });
