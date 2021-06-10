@@ -435,8 +435,29 @@ body table {
 	display: none;
 }
 
+.img-background {
+	background-color: white;
+	border-color: black;
+	border: solid;
+	-webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
+}
+
+.dailyFocus{
+	background-color: white;
+	border-color: black;
+	border: solid;
+}
+
+body.settings {
+	background-image: url('images/daily-img-1.jpg'); 
+	background-size: 100%;
+	background-position: right;
+}
+
 #return{
 	display: none;
+	background-color: white;
+	-webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
 }
 #weekly{
 	display: none;
