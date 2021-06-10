@@ -40,6 +40,7 @@ function close_modal(){
     editID = NaN;
     document.getElementById("focus_form").reset();
     document.getElementById("focus_modal").style.display = "none";
+    document.getElementById("warning").innerHTML = "";
 }
 
 
@@ -78,7 +79,7 @@ function display(){
             details.className = "grid-item-2";  
             duration.className = "grid-item-3";
             var img = document.createElement("img");  
-            img.setAttribute('src', 'images/goal.png');
+            //img.setAttribute('src', 'images/goal.png');
             img.setAttribute('width', '50px');
             img_div.appendChild(img);
             top_half.className = "focus_single_item_inner";
@@ -93,7 +94,21 @@ function display(){
             var tag =  document.createElement("div");
             tag.innerHTML = db.getItem(phrase+"tags");
             tag.className = "focus_tag";
-
+            
+            //Emoji system
+            //console.log(tag.innerHTML); //prints the tag name
+            var tag_emoji = {
+                "Health" : 'images/medical.png',
+                "Academics" : 'images/academics.png',
+                "Personal" : 'images/personal-New.png',
+                "Urgent" : 'images/urgent.png',
+                "Financials" : 'images/finance.png',
+                "Work" : 'images/work.png',
+                "Family" : 'images/family.png',
+                "Cleaning" : 'images/clean.png'
+            }
+            img.setAttribute('src', tag_emoji[tag.innerHTML]);
+            
             details.appendChild(name);
             details.appendChild(tag);
 
@@ -381,7 +396,7 @@ function changeBodyBg(color){
 
 
 
-function add_card(toStore = "true") {
+function add_card(toStore=true) {
     let new_card = document.createElement("div");
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
@@ -548,34 +563,46 @@ function loadData() {
 
 document.addEventListener("DOMContentLoaded",loadData);
 
-
+function addDateZeroes(datePrint) {
+    if (datePrint.indexOf("/") == 1) {
+        datePrint = "0" + datePrint;
+    }
+    let dateStart = datePrint.substring(0,3);
+    let dateEnd = datePrint.substring(3);
+    if (dateEnd.indexOf("/") == 1) {
+        dateEnd = "0" + dateEnd;
+    }
+    return dateStart + dateEnd;
+}
 
 //Calendar Start
 //Automatically gets current Date. Change date with select Date
 //Changes?? remove 0 from single digit days and months
 var dt = new Date();
-document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+document.getElementById("datetime").innerHTML = addDateZeroes(dt.toLocaleDateString());
+//6/9/2021 what we get
+//06/09/2021 what we want
 function handler(e){
     console.log(e.target.value);
     document.getElementById("datetime").textContent = e.target.value.substring(5,7) + "/" + e.target.value.substring(8) + "/" + e.target.value.substring(0,4);
-  }
-//Calendar End
-
-
-
-document.getElementById('daily_button').addEventListener('click', () => {
-    console.log("clicked");
-    document.body.classList.add('settings');
-    var head = document.getElementById("return");
-    document.querySelector("h1").style = "display: block;"
-
-    
-
     let numFocusItems = db.getItem("numFocus");
     let wrapper = document.querySelector(".dailyFocus");
 
+    let allTimes = document.querySelectorAll("#box");
+    for(let i=0; i<allTimes.length; i++) {
+        
+        let items = allTimes[i].childNodes;
+        console.log(items)
+        for(let j=0; j<items.length; j++) {
+            
+            console.log(items[j]);
+            allTimes[i].removeChild(items[j]);
+            // document.querySelectorAll("#box")[1].removeChild(document.querySelectorAll("#box")[1].firstChild)
+        }
+    }
+
     
-    wrapper.innerHTML = "<td colspan='4' rowspan='1' <div style ='width: 80%;'id='box' ondrop='drop(event)' ondragover='allowDrop(event)'></div></td>";
+    wrapper.innerHTML = "<td colspan='4' rowspan='1' <div style ='width: 80%;'id='box' class='start' ondrop='drop(event)' ondragover='allowDrop(event)'></div></td>";
     for(let i = 0; i < numFocusItems; i++ ) {
         let drag = document.createElement("td");
         drag.id = "drag"+i;
@@ -592,6 +619,74 @@ document.getElementById('daily_button').addEventListener('click', () => {
         wrapper.appendChild(drag);
 
     }
+
+    populateDailyView();
+  }
+//Calendar End
+
+
+
+
+
+function populateDailyView() {
+    
+    let currDate = document.getElementById("datetime").innerHTML;
+    console.log(currDate);
+    for(i = 0; i < db.getItem("numFocus"); i++) {
+        let ID = "drag"+i;
+        let phrase = currDate + ID;
+        console.log(phrase);
+        if(db.getItem(phrase) === null) { continue;}
+        else{
+           
+            let box = db.getItem(phrase);
+            console.log(box);
+            let focusItem = document.getElementById(ID);
+            //.class = "9:00am" <- Example of format
+            document.getElementsByClassName(box)[0].appendChild(focusItem);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+document.getElementById('daily_button').addEventListener('click', () => {
+    console.log("clicked");
+    document.body.classList.add('settings');
+    var head = document.getElementById("return");
+    document.querySelector("h1").style = "display: block;"
+
+
+    
+
+    let numFocusItems = db.getItem("numFocus");
+    let wrapper = document.querySelector(".dailyFocus");
+
+    
+    wrapper.innerHTML = "<td colspan='4' rowspan='1' <div style ='width: 80%;'id='box' class='start' ondrop='drop(event)' ondragover='allowDrop(event)'></div></td>";
+    for(let i = 0; i < numFocusItems; i++ ) {
+        let drag = document.createElement("td");
+        drag.id = "drag"+i;
+        drag.draggable = "true";
+        drag.addEventListener("dragstart", function(event){
+            event.dataTransfer.setData("text", event.target.id);
+        }, false);
+        drag.colSpan = "4";
+        drag.rowSpan = "1";
+        drag.classList.add("stage-saturn");
+        drag.classList.add("element");
+        let phrase = "focus" + i + "name";
+        drag.innerHTML = db.getItem(phrase);
+        wrapper.appendChild(drag);
+
+    }
+
+    populateDailyView();
 
     
     
