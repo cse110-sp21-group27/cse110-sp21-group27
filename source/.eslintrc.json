@@ -1,5 +1,6 @@
 {
     "parser": "babel-eslint", //fixes unexpected token
+    "env": {"es6": true},
     
     "rules": {
         "semi": ["error", "always"],
