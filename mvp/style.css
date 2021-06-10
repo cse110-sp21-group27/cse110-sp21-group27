@@ -98,8 +98,7 @@ h2 {
 #Logo{
 	grid-row-start: 5;
 	grid-row-end: 6;
-	width: 420px;
-	height: 300px;
+	width: 60%;
 	margin: auto;
 	display: block;
 	margin-left: auto;
@@ -338,7 +337,7 @@ h2 {
 	margin: auto;
 	border: 2px solid black;
 	padding: 10px 0 10px;
-	border-radius: 5px;
+	border-radius: 35px;
 	text-align: left!important;
 	margin-bottom: 20px;
 	background-color: white;

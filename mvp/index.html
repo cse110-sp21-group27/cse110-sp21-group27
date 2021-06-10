@@ -61,10 +61,17 @@
 			  console.log(document.getElementById(data));
 			  
 			ev.target.appendChild(document.getElementById(data));
+			let currDate = document.getElementById("datetime").innerHTML;
+			let phrase = currDate + data;
+			window.localStorage.setItem(phrase, ev.target.classList[0]);
 		  
 		  }else{
 			//console.log(ev.target.parentElement)
 			ev.target.parentElement.appendChild(document.getElementById(data));
+			let currDate = document.getElementById("datetime").innerHTML;
+			let phrase = currDate + data;
+			window.localStorage.setItem(phrase, ev.target.parentElement.classList[0]);
+
 			//document.getElementById("box").appendChild(document.getElementById(data));
 		  }
 		  // this is causing tasks to appear nested visually
@@ -108,209 +115,209 @@
         5:00am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="5:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         5:30am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="5:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         6:00am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="6:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         6:30am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="6:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         7:00am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="7:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         7:30am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="7:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         8:00am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="8:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         8:30am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="8:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         9:00am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="9:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         9:30am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="9:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         10:00am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="10:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		<tr>
 			<th>    
         10:30am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="10:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  <tr>
 			<th>    
         11:00am
       </th>
       
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="11:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
       </tr>
 		  <tr>
 			<th>11:30am</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="11:30am" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>12:00pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="12:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>12:30pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="12:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>1:00pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="1:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>1:30pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="1:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>2:00pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="2:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>2:30pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="2:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>3:00pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="3:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>3:30pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="3:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>4:00pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="4:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>4:30pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="4:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>5:00pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="5:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>5:30pm</th>
-      		<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<td colspan="4" rowspan="1" <div id="box" class="5:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div></td>
 		  </tr>
 		  <tr>
 			<th>6:00pm</th>
-        <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <td colspan="4" rowspan="1" <div id="box" class="6:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>6:30pm</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="6:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>7:00pm</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="7:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>7:30pm</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="7:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>8:00pm</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="8:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>8:30pm</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="8:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>9:00pm</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="9:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>9:30pm</th>
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="9:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>10:00pm</th>
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="10:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>10:30pm</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="10:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>11:00pm</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="11:00pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>11:30pm</th>
-			<td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<td colspan="4" rowspan="1" <div id="box" class="11:30pm" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		  <tr>
 			<th>12:00am</th>
-      <td colspan="4" rowspan="1" <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <td colspan="4" rowspan="1" <div id="box" class="12:00am" ondrop="drop(event)" ondragover="allowDrop(event)">
 		  </tr>
 		
 	  </table>
