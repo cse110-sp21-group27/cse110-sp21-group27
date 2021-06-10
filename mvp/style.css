@@ -9,6 +9,10 @@
 	border-width: 2px;
 }
 
+textarea {
+	resize: none;
+}
+
 html, body, #main_page {
 	margin: 0px;
 	height: 100%;
