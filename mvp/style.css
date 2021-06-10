@@ -209,6 +209,7 @@ h2 {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border: 2px solid black;
+	border-radius: 10px;
 	display: grid;
 	grid-template-rows: 50px 200px;
 	grid-template-columns: calc(100% - 30px) 30px;
@@ -244,6 +245,61 @@ h2 {
 	grid-row-end: 3;
 	grid-column-start: 1;
 	grid-column-end: 3;
+}
+/* selector css*/
+#cards_list > div > select {
+	width: 110px;
+	height: 20px;
+	margin-top: 228px;
+	margin-right: 10px;
+	margin-left: 35%;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 1;
+	grid-column-end: 1;
+	background-color: white;
+	border-radius: 10px;
+	font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	
+}
+/*options css*/
+#option-0{
+	background-color: white;
+	color: white;
+	font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+#option-1 {
+	background-color: white;
+	color: white;
+	font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+#option-2 {
+	background-color: LightCoral;
+	color: lightcoral;
+	font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	
+}
+#option-3 {
+	background-color: blue;
+	color: blue;
+	font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+#option-4{
+	background-color: gold;
+	color:gold;
+	font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+#option-5{
+	background-color: BlueViolet;
+	color: BlueViolet;
+	font-family:apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 #cards_list > div > textarea:focus {
@@ -559,3 +615,25 @@ body.settings {
 	width: 25px;
 	padding-right: 10px;
 }
+/* scroll bar css*/
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px #696969; 
+	border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #696969; 
+	border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #696969; 
+  }

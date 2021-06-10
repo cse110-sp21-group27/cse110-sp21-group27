@@ -394,13 +394,21 @@ function changeBodyBg(color){
 
 
 
-
+function changeCardColor(node,color){
+    // document.querySelector("textarea").style.background = color;
+    // var elem = document.getElementById("cards_list").childNodes[1];
+    // elem.style.background = color;
+    node.style.background = color;
+    node.childNodes[1].style.background = color;
+}
 
 function add_card(toStore=true) {
     let new_card = document.createElement("div");
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
     let cross_img = document.createElement("img");
+    //color stuff
+    let color = document.createElement("select");
     let d = new Date();
     var details = { value: "Enter Text", ctrl: false };
     new_date.innerHTML = (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getFullYear();
@@ -409,6 +417,39 @@ function add_card(toStore=true) {
     cross_img.alt = "X";
     cross_img.addEventListener("click",() => { remove_card(new_card,new_date,new_text,cross_img); });
     new_card.appendChild(new_date);
+    //color stuff
+    let prompt = document.createElement("option");
+    prompt.id = "option-0";
+    prompt.textContent = "Select a Color";
+    color.appendChild(prompt);
+
+    let white = document.createElement("option");
+    white.id = "option-1";
+    white.textContent = "white";
+    color.appendChild(white);
+
+    let LightCoral = document.createElement("option");
+    LightCoral.id = "option-2";
+    LightCoral.textContent = "LightCoral";
+    color.appendChild(LightCoral);
+
+    let LightSkyBlue = document.createElement("option");
+    LightSkyBlue.id = "option-3";
+    LightSkyBlue.textContent = "LightSkyBlue";
+    color.appendChild(LightSkyBlue);
+
+
+    let Gold = document.createElement("option");
+    Gold.id = "option-4";
+    Gold.textContent = "Gold";
+    color.appendChild(Gold);
+
+    let BlueViolet = document.createElement("option");
+    BlueViolet.id = "option-5";
+    BlueViolet.textContent = "BlueViolet";
+    color.appendChild(BlueViolet);
+    new_card.appendChild(color);
+    //color stuff
     new_card.appendChild(cross_img);
     new_card.appendChild(new_text);
     new_card.addEventListener("change",storeData);
@@ -421,6 +462,11 @@ function add_card(toStore=true) {
     if (toStore) {
         storeData();
     }
+    //help change color of cards
+    color.addEventListener('change', (event) => {
+        //console.log(event.target.parentNode);
+        changeCardColor(event.target.parentNode, event.target.value);
+    });
 }
   
 
