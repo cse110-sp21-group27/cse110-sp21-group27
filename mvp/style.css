@@ -9,6 +9,10 @@
 	border-width: 2px;
 }
 
+textarea {
+	resize: none;
+}
+
 html, body, #main_page {
 	margin: 0px;
 	height: 100%;
@@ -98,8 +102,7 @@ h2 {
 #Logo{
 	grid-row-start: 5;
 	grid-row-end: 6;
-	width: 420px;
-	height: 300px;
+	width: 60%;
 	margin: auto;
 	display: block;
 	margin-left: auto;

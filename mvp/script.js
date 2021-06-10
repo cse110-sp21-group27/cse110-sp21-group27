@@ -381,7 +381,7 @@ function changeBodyBg(color){
 
 
 
-function add_card() {
+function add_card(toStore = "true") {
     let new_card = document.createElement("div");
     let new_date = document.createElement("p");
     let new_text = document.createElement("textarea");
@@ -403,6 +403,9 @@ function add_card() {
     card_container.appendChild(new_card);
     new_text.addEventListener("keydown",(event) => { handleKeyDown(event,new_text,details); });
     new_text.addEventListener("keyup",(event) => { handleKeyUp(event,new_text,details); });
+    if (toStore) {
+        storeData();
+    }
 }
   
 
@@ -535,7 +538,7 @@ function loadData() {
     let numCards = db.getItem("numCards");
     let cardsArray = document.querySelectorAll("#cards_list > div");
     for (let i = cardsArray.length; i < numCards; i++) {
-        add_card();
+        add_card(false);
     }
     cardsArray = document.querySelectorAll("#cards_list > div");
     for (let i = 0; i < numCards; i++) {
