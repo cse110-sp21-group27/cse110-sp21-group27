@@ -1,35 +1,27 @@
-name: Linting
+name: Lint
 
 on:
   pull_request:
-    branches:
-      - main
-  
-jobs:
-  eslint:
-    name: Install and run ESLint
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    branches: main
 
-      - name: Babel
-        working-directory: ./source
-        run: npm install babel-cli babel-core --save-dev
-      
+jobs:
+  run-linters:
+    name: Run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Code
+        uses: actions/checkout@v2
+  
       - name: Install ESLint
         working-directory: ./source
-        run: npm install eslint --save-dev
-          
-      - name: Set up config
+        run: npm install --save-dev eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node
+      
+      - name: Config
         working-directory: ./source
         run: npx eslint --init
-         
+      
       - name: Run ESLint
         working-directory: ./source
         run: npx eslint "./*.js"
-        
-      
-
         
