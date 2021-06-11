@@ -498,14 +498,13 @@ function handler(e){
         drag.classList.add("element");
         let phrase = "focus" + i + "name";
         drag.innerHTML = db.getItem(phrase);
-        wrapper.appendChild(drag);
+        wrapper.firstChild.firstChild.firstChild.appendChild(drag);
 
     }
 
     populateDailyView();
   }
 //Calendar End
-
 function populateDailyView() {
     
     let currDate = document.getElementById("datetime").innerHTML;
@@ -544,7 +543,7 @@ document.getElementById('daily_button').addEventListener('click', () => {
         drag.classList.add("element");
         let phrase = "focus" + i + "name";
         drag.innerHTML = db.getItem(phrase);
-        wrapper.appendChild(drag);
+        wrapper.firstChild.firstChild.firstChild.appendChild(drag);
     }
 
     populateDailyView();
