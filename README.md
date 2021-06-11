@@ -22,7 +22,7 @@ The Bullet Journal is a personalized aid to keep track of commitments, classes, 
 
 ## Design
 - Here is a link to [Architectural Documentation Records](./specs/adrs)
-- Take a look at our [high fidelity wireframes]() and [prototypes]()
+- Take a look at our [high fidelity wireframes](https://www.figma.com/proto/YaKr3VQQVN1rDkYUJxNg6z/CSE-110?page-id=72%3A91&node-id=105%3A1305&viewport=-3364%2C1075%2C0.40340369939804077&scaling=min-zoom) and [prototypes](https://www.figma.com/proto/YaKr3VQQVN1rDkYUJxNg6z/CSE-110?page-id=72%3A91&node-id=105%3A1305&viewport=-3364%2C1075%2C0.40340369939804077&scaling=min-zoom)
 
 ## Sprints
 - Sprint #1
