@@ -42,6 +42,6 @@ The Bullet Journal is a personalized aid to keep track of commitments, classes, 
 - Here is a link to the source [code](./source) of the Bullet Journal!
 
 ## Testing
-- Here is a look at our testing suite!
+- Here is a look at our testing suite!!!
 
 
