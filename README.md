@@ -2,6 +2,10 @@
 
 https://bean-bag-boys-bujo.herokuapp.com/
 
+## Videos
+Public Version:https://youtu.be/Sz0LI82R__M
+Private Version:https://www.youtube.com/watch?v=Srr20HhZUKw
+
 [Team Page](./admin/team.md)
 
 ![Front Page](./admin/teamPageassets/FrontPage.png)
@@ -37,20 +41,16 @@ The Bullet Journal is a personalized aid to keep track of commitments, classes, 
 - Here are the [Daily Standups.](./admin/dailyStandups)
 - Here is the [team contract.](./admin/misc)
 - Here are all the [videos](./admin/videos) for this quarter.
-  - https://www.youtube.com/watch?v=Sz0LI82R__M
-  - 
 
 ## Source
 - Here is a link to the source [code](./source) of the Bullet Journal!
 
 ## Testing
-- Here is a look at our testing suite! Our testing worked on our local machines, but unfortunately we were not able to coordinate with the CI / CD pipeline as there were technical errors.
+- Here is a look at our testing suite! Our [testing](./source/puppeteer.test.js) worked on our local machines, but unfortunately we were not able to coordinate with the CI / CD pipeline as there were technical errors.
 
 ![testing](./admin/teamPageassets/image.png)
 
-## Videos
-Public Version:https://youtu.be/Sz0LI82R__M
-Private Version:https://www.youtube.com/watch?v=Srr20HhZUKw
+
 
 
 
