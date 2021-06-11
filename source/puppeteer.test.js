@@ -1,6 +1,6 @@
 describe('Testing Focus Items ', () => {
   beforeAll(async () => {
-    await page.goto('http://127.0.0.1:5502/mvp/index.html');
+    await page.goto('https://bean-bag-boys-bujo.herokuapp.com/');
     await page.waitForTimeout(1000);
   });
 
