@@ -30,16 +30,16 @@ describe('Testing Focus Items ', () => {
   it('Test4: Compare Focus Item Count', async() => {
       const count = await page.$eval("#focus_completed_number", (c) => {
           return parseInt(c.innerHTML);
-      })
+      });
 
       const count2 = await page.$$eval('img', (entries) => {
           var count3 = 0;
-          for(i = 0; i < entries.length; i++)
+          for(i = 0; i < entries.length; i++);
           {
               if(entries[i].src.includes("images/tick.png"))
-              count3++
+              count3++;
           }
-          return count3
+          return count3;
       });
       expect(count2).toBe(count);
   });
@@ -48,16 +48,16 @@ describe('Testing Focus Items ', () => {
       await page.click('.done_image');
       const count = await page.$eval("#focus_completed_number", (c) => {
           return parseInt(c.innerHTML);
-      })
+      });
 
       const count2 = await page.$$eval('img', (entries) => {
           var count3 = 0;
           for(i = 0; i < entries.length; i++)
           {
               if(entries[i].src.includes("images/tick.png"))
-              count3++
+              count3++;
           }
-          return count3
+          return count3;
       });
       expect(count2).toBe(count);
   });
@@ -103,7 +103,7 @@ describe('Testing Focus Items ', () => {
             
       const text = await page.$eval("#name0", (c) => {
         return c.innerHTML;
-     })
+     });
       expect(text).toBe("XYZA");
     });
 
