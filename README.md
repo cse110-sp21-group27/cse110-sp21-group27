@@ -39,7 +39,7 @@ The Bullet Journal is a personalized aid to keep track of commitments, classes, 
 - Here are all the [videos](./admin/videos) for this quarter.
 
 ## Source
-- Here is a link to the source [code](./source) of the Bullet Journal!
+- Here is a link to the source [code](./source) of the Bullet Journal!!
 
 ## Testing
 - Here is a look at our testing suite! Our testing worked on our local machines, but unfortunately we were not able to coordinate with the CI / CD pipeline as there were technical errors.
