@@ -48,6 +48,10 @@ The Bullet Journal is a personalized aid to keep track of commitments, classes, 
 
 ![testing](./admin/teamPageassets/image.png)
 
+## Videos
+Public Version:https://youtu.be/Sz0LI82R__M
+Private Version:https://www.youtube.com/watch?v=Srr20HhZUKw
+
 
 
 
