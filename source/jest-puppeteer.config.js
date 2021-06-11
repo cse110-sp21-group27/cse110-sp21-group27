@@ -4,3 +4,5 @@ module.exports = {
        slowMo: 500
       }
     };
+
+    setTimeout(30000);
