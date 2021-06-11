@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "author": "Bean Bag Boys",
-  "license": "ISC"
+  "license": "ISC",
+
+  "jest": {
+    "preset": "jest-puppeteer",
+    "verbose": true
+ }
 }
