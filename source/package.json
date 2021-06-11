@@ -1,11 +1,24 @@
 {
-  "name": "bullet",
+  "name": "mvp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "directories": {
+    "test": "test"
   },
-  "author": "Bean Bag Boys",
-  "license": "ISC"
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3",
+    "puppeteer-core": "^9.1.1"
+  },
+  "devDependencies": {
+    "jest-puppeteer": "^5.0.4",
+    "puppeteer": "^9.1.1"
+  }
 }
