@@ -37,6 +37,8 @@ The Bullet Journal is a personalized aid to keep track of commitments, classes, 
 - Here are the [Daily Standups.](./admin/dailyStandups)
 - Here is the [team contract.](./admin/misc)
 - Here are all the [videos](./admin/videos) for this quarter.
+  - https://www.youtube.com/watch?v=Sz0LI82R__M
+  - 
 
 ## Source
 - Here is a link to the source [code](./source) of the Bullet Journal!
