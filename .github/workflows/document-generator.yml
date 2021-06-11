@@ -26,7 +26,7 @@ jobs:
         working-directory: ./source
         run: jsdoc ./script.js -d ../docs
         
-      # Adopted some of the commit file template from https://github.com/marketplace/actions/generate-documentation
+      # Adopted some of the commit file template from https://github.com/marketplace/actions/generate-documentation.
       - name: Commit files
         run: |
           git add .
