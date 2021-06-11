@@ -145,15 +145,15 @@ beforeAll(async () => {
   await page.waitForTimeout(1000);
 });
 it('Test9: Add Card Verify', async () => {
-  let oldCardsHolder = window.getElementById("cards_list");
+  let oldCardsHolder = await page.$$("cards_list");
   let numCards = oldCardsHolder.childNodes.length;
   await page.click("#cards_button");
-  let newCardsHolder = window.getElementById("cards_list");
+  let newCardsHolder = await page.$$("cards_list");
   let numCards2 = newCardsHolder.childNodes.length;
   expect(numCards2).toBe(numCards + 1);
 });
 it('Test10: Change Color Verify', async () => {
-  let cardsHolder = window.getElementById("cards_list");
+  let cardsHolder = await page.$$("cards_list");
   let firstCard = cardsHolder.childNodes[0];
   let selectMenu = firstCard.childNodes[1];
   await selectMenu.click();
@@ -161,7 +161,7 @@ it('Test10: Change Color Verify', async () => {
   expect(firstCard.style.background).toBe("lightcoral");
 });
 it('Test11: Edit Card Text', async () => {
-  let cardsHolder = window.getElementById("cards_list");
+  let cardsHolder = await page.$$("cards_list");
   let firstCard = cardsHolder.childNodes[0];
   let firstText = firstCard.childNodes[3];
   let testString = "Change to this";
@@ -170,12 +170,12 @@ it('Test11: Edit Card Text', async () => {
   expect(firstText.value).toBe(testString);
 });
 it('Test12: Remove Card Verify', async () => {
-  let cardsHolder = window.getElementById("cards_list");
+  let cardsHolder = await page.$$("cards_list");
   let oldNumCards = cardHolder.childNodes.length;
   let firstCard = cardsHolder.childNodes[0];
   let cardRemove = firstCard.childNodes[2];
   cardRemove.click();
-  let newCardsHolder = window.getElementById("cards_list");
+  let newCardsHolder = await page.$$("cards_list");
   let newNumCards = newCardsHolder.childNodes.length;
   expect(oldNumCards).toBe(newNumCards + 1);
 });

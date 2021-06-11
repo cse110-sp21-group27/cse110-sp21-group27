@@ -12,7 +12,7 @@ jobs:
        uses: actions/checkout@v2
      - name: Install jest
        working-directory: ./source
-       run: npm install --save-dev jest 
+       run: npm install --save-dev jest babel-jest @babel/core @babel/preset-env
      - name: Install jest puppeteer 
        working-directory: ./source
        run: npm install --save-dev puppeteer jest-puppeteer
