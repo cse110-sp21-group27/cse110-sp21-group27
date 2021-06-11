@@ -1,0 +1,29 @@
+# How to Deploy?
+
+* Status: [accepted]
+* Deciders:[Team Decision]
+* Date: [2021-06-10]
+
+
+## Context and Problem Statement
+
+We need to decide how to deploy our app
+
+## Considered Options
+
+* Github Pages
+* Heroku
+
+## Decision Outcome
+
+Heroku was chosen, as we found it easy to do and it worked well
+
+### Positive Consequences
+
+Our App can now be used by anyone!
+
+### Negative Consequences
+* NA
+
+## Pros and Cons of the Options
+Pros: Our app can now be deployed!
