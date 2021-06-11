@@ -4,5 +4,3 @@ module.exports = {
        slowMo: 500
       }
     };
-
-    jest.setTimeout(30000);
