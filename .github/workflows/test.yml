@@ -13,6 +13,10 @@ jobs:
      - name: Install jest
        working-directory: ./source
        run: npm install --save-dev jest
+    - name: Install jest puppeteer
+       working-directory: ./source
+       run: npm install --save-dev puppeteer jest-puppeteer
+
      - name: Run jest
        working-directory: ./source
        run: npm test
