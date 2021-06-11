@@ -3,4 +3,4 @@ module.exports = {
        headless: false,
        slowMo: 500
       }
-    }
+    };
